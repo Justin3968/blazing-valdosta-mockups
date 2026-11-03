@@ -6,9 +6,9 @@ const NS='http://www.w3.org/2000/svg';
 document.documentElement.classList.add('bv-theatre');
 // Shared SVG defs: flame gradients, glow, ink-stamp texture.
 document.body.insertAdjacentHTML('afterbegin',`<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
-<linearGradient id="bvfRed" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff3a12"/><stop offset=".55" stop-color="#d4140f"/><stop offset="1" stop-color="#7a0606" stop-opacity="0"/></linearGradient>
-<linearGradient id="bvfOr" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffd23a"/><stop offset=".5" stop-color="#ff7a10"/><stop offset="1" stop-color="#ff4a10" stop-opacity=".2"/></linearGradient>
-<linearGradient id="bvfYe" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fffbe0"/><stop offset=".6" stop-color="#ffe56a"/><stop offset="1" stop-color="#ffc400" stop-opacity=".3"/></linearGradient>
+<linearGradient id="bvfRed" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e0121e"/><stop offset=".55" stop-color="#b0101a"/><stop offset="1" stop-color="#7a0606" stop-opacity="0"/></linearGradient>
+<linearGradient id="bvfOr" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffa3aa"/><stop offset=".5" stop-color="#ff3344"/><stop offset="1" stop-color="#ff1f2e" stop-opacity=".2"/></linearGradient>
+<linearGradient id="bvfYe" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#ffc8cc"/><stop offset="1" stop-color="#ff7a84" stop-opacity=".3"/></linearGradient>
 <linearGradient id="bvFold" x1="0" x2="1"><stop offset="0" stop-color="#020202"/><stop offset=".28" stop-color="#0c0c0d"/><stop offset=".48" stop-color="#1b1b1d"/><stop offset=".6" stop-color="#2a2a2c"/><stop offset=".72" stop-color="#141415"/><stop offset="1" stop-color="#010101"/></linearGradient>
 <linearGradient id="bvCShade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".65"/><stop offset=".8" stop-color="#0a0a0a" stop-opacity="0"/><stop offset="1" stop-color="#3a3a3c" stop-opacity=".3"/></linearGradient>
 <linearGradient id="bvVal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".6" stop-color="#0e0e0f"/><stop offset="1" stop-color="#1f1f21"/></linearGradient>
@@ -20,16 +20,17 @@ document.body.insertAdjacentHTML('afterbegin',`<svg width="0" height="0" style="
 let seed=7;const rnd=(a,b)=>{seed=(seed*16807)%2147483647;return a+(b-a)*(seed/2147483647)};
 // Cartoon fire: one chunky teardrop tongue with a curly tip, drawn in a unit box (base centre at 0,0, height 1).
 const TG='M0,0 C-.52,0 -.64,-.3 -.44,-.55 C-.3,-.74 -.1,-.82 .02,-1.02 C.24,-.97 .27,-.8 .12,-.76 C.36,-.66 .6,-.42 .52,-.2 C.46,-.04 .26,0 0,0 Z';
-const OL='#1a0505',CR='#e8230f',CO='#ff8a00',CY='#ffd21a',CH='#fff6c4';
+// Sin City comic-ink fire: pure black ink outlines, flat red-only fills, white-hot core.
+const OL='#000',CR='#b0101a',CO='#ff1f2e',CY='#ffffff',CH='#ffffff';
 const tng=(x,y,w,h,sk,flip,fill,extra='')=>`<path d="${TG}" transform="translate(${x.toFixed(1)},${y.toFixed(1)}) skewX(${sk.toFixed(1)}) scale(${(flip?-w:w).toFixed(2)},${h.toFixed(2)})" fill="${fill}" vector-effect="non-scaling-stroke" ${extra}/>`;
 const hl=(x,y,w,h,sk)=>`<ellipse cx="${(x-w*.12+sk*-h*.004).toFixed(1)}" cy="${(y-h*.42).toFixed(1)}" rx="${(w*.07).toFixed(1)}" ry="${(h*.1).toFixed(1)}" fill="${CH}" opacity=".9"/>`;
 const flame=(x,y,s,lean,sw=7)=>{const w=44*s,h=rnd(70,108)*s,sk=Math.max(-22,Math.min(22,-lean*1.1+rnd(-8,8))),fp=rnd(0,1)<.5,d=rnd(0,1.2).toFixed(2),du=rnd(.8,1.15).toFixed(2);
- return `<g class="bv-fl" style="transform-origin:${x.toFixed(0)}px ${y.toFixed(0)}px;animation-delay:-${d}s;animation-duration:${du}s">${tng(x,y,w,h,sk,fp,CR,`stroke="${OL}" stroke-width="${sw}" stroke-linejoin="round" paint-order="stroke"`)}${tng(x,y-h*.02,w*.66,h*.64,sk,fp,CO)}${tng(x,y-h*.03,w*.36,h*.36,sk,fp,CY)}${hl(x,y,w,h,sk)}</g>`};
+ return `<g class="bv-fl" style="transform-origin:${x.toFixed(0)}px ${y.toFixed(0)}px;animation-delay:-${d}s;animation-duration:${du}s">${tng(x,y,w,h,sk,fp,CR,`stroke="${OL}" stroke-width="${sw}" stroke-linejoin="round" paint-order="stroke"`)}${tng(x,y-h*.02,w*.66,h*.64,sk,fp,CO,`stroke="#000" stroke-width="${(sw*.45).toFixed(1)}" stroke-linejoin="round" paint-order="stroke"`)}${tng(x,y-h*.03,w*.36,h*.36,sk,fp,CY,`stroke="#000" stroke-width="${(sw*.35).toFixed(1)}" stroke-linejoin="round" paint-order="stroke"`)}</g>`};
 
 // Original Blazers-inspired cartoon emblem (not the school's logo): three chunky curly tongues merged under one thick outline.
 const ET=[[30,124,46,70,14,1],[78,124,42,84,-12,0],[54,126,64,118,-4,0]];
 const emblem=(cls)=>{const sil=ET.map(t=>tng(t[0],t[1],t[2],t[3],t[4],t[5],CR)).join('');
- return `<svg class="bv-emb ${cls}" viewBox="-4 -8 112 142" width="66" height="84" aria-hidden="true" focusable="false"><g stroke="${OL}" stroke-width="8" stroke-linejoin="round">${sil}</g>${sil}${ET.map(t=>tng(t[0],t[1]-2,t[2]*.6,t[3]*.62,t[4],t[5],CO)).join('')}${tng(54,124,26,52,-4,0,CY)}${tng(32,123,14,26,14,1,CY)}${tng(77,123,14,30,-12,0,CY)}<ellipse cx="44" cy="62" rx="5" ry="11" transform="rotate(14 44 62)" fill="${CH}"/><circle cx="47" cy="44" r="3" fill="${CH}"/></svg>`};
+ return `<svg class="bv-emb ${cls}" viewBox="-4 -8 112 142" width="66" height="84" aria-hidden="true" focusable="false"><g stroke="${OL}" stroke-width="11" stroke-linejoin="round">${sil}</g>${sil}<g stroke="#000" stroke-width="4" stroke-linejoin="round" paint-order="stroke">${ET.map(t=>tng(t[0],t[1]-2,t[2]*.6,t[3]*.62,t[4],t[5],CO)).join('')}${tng(54,124,26,52,-4,0,CY)}${tng(32,123,14,26,14,1,CY)}${tng(77,123,14,30,-12,0,CY)}</g><ellipse cx="44" cy="62" rx="5" ry="11" transform="rotate(14 44 62)" fill="${CH}"/><circle cx="47" cy="44" r="3" fill="${CH}"/></svg>`};
 
 if(wall){
  wall.classList.add('bv-stage');
@@ -116,7 +117,7 @@ if(lab){
   const svg=c=>`<svg width="${W.toFixed(0)}" height="${H.toFixed(0)}" viewBox="0 0 ${W.toFixed(1)} ${H.toFixed(1)}" style="overflow:visible">${c}</svg>`;
   back.style.cssText=`left:${(-pad).toFixed(1)}px;bottom:0;width:${W.toFixed(0)}px;height:${H.toFixed(0)}px`;
   front.style.cssText=back.style.cssText;
-  back.innerHTML=svg(`<g filter="url(#bvGlow)">${b}</g>`);front.innerHTML=svg(f);seed=sv};
+  back.innerHTML=svg(`<g>${b}</g>`);front.innerHTML=svg(f);seed=sv};
  drawLogo();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(drawLogo);
  let lw=0;if(window.ResizeObserver)new ResizeObserver(()=>{if(lab.offsetWidth!==lw){lw=lab.offsetWidth;requestAnimationFrame(drawLogo)}}).observe(lab);else addEventListener('resize',drawLogo);
 }
@@ -125,6 +126,14 @@ if(lab){
 {const cb=document.querySelector('#bv-three .bv-clockcol .clock-board');
  if(cb&&!document.querySelector('.bv-shotfig')){const d=document.createElement('div');d.className='bv-shotfig';d.setAttribute('aria-hidden','true');
   d.innerHTML='<img src="memoriam-assets/art/shot-figure.svg" alt="" width="200" height="260">';cb.parentNode.insertBefore(d,cb)}}
+
+// Original Sin City-style blood-splatter accents (decorative, kept off text, data and the chalk outlines).
+{const B='memoriam-assets/art/';
+ [['#bv-memorial .bv-stage-fx','splat-a','bv-sp-tape'],['#bv-three','splat-c','bv-sp-board'],['#dashboard','splat-b','bv-sp-dash'],
+  ['#dashboard','splat-a','bv-sp-div1',1],['#incidents','splat-c','bv-sp-inc'],['#hospital','splat-b','bv-sp-hosp'],['body>.bv-divider','splat-a','bv-sp-div2']]
+ .forEach(([sel,img,cls,prev])=>{let host=document.querySelector(sel);if(host&&prev){host=host.previousElementSibling;if(!host||!host.classList.contains('bv-divider'))return}if(!host||host.querySelector('.'+cls))return;
+  const sp=document.createElement('span');sp.className='bv-splat '+cls;sp.setAttribute('aria-hidden','true');
+  sp.innerHTML='<img src="'+B+img+'.svg" alt="">';host.appendChild(sp)})}
 
 // Slow fade-in as each section scrolls into view (skipped for reduced motion).
 if(!reduce&&'IntersectionObserver' in window){

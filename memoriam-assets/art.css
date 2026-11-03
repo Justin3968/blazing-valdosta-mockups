@@ -12,7 +12,7 @@
 .bv-wall-count{margin:6px 0 0;color:#e6e2da;font-size:15px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
 .bv-wall-count b{font:800 34px/1 'Barlow Condensed',Impact,sans-serif;color:#ff2a40}
 .bv-tally{height:22px;width:auto;opacity:.9}
-.bv-candle{flex:none;filter:drop-shadow(0 0 10px #ff8a1c66);animation:bv-flicker 3.2s ease-in-out infinite}
+.bv-candle{flex:none;filter:drop-shadow(0 0 10px #e0121e66);animation:bv-flicker 3.2s ease-in-out infinite}
 .bv-candle+div+.bv-candle{animation-delay:-1.4s}
 @keyframes bv-flicker{0%,100%{opacity:1;transform:scaleY(1)}40%{opacity:.88;transform:scaleY(.985)}70%{opacity:.96}}
 .bv-wall-caveat{max-width:820px;margin:10px auto 16px;padding:8px 12px;background:#000c;border-left:4px solid #e3132f;color:#d8d4cc;font-size:13px;line-height:1.5}

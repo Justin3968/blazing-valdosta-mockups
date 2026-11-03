@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" width="160" height="60" aria-hidden="true">
+<!-- Original Sin City-style ink streak with drops: black ink outline, flat red fill. -->
+<g fill="#b0101a" stroke="#000" stroke-width="3" stroke-linejoin="round">
+<path d="M8 30 C20 22 40 24 62 27 C84 30 104 26 124 28 C112 33 90 36 70 35 C48 34 24 38 8 30 Z"/>
+<path d="M126 26 C134 22 142 25 141 30 C140 35 131 35 126 32 Z"/>
+<circle cx="150" cy="24" r="4"/><circle cx="148" cy="38" r="2.6"/><circle cx="138" cy="14" r="2.4"/>
+<path d="M60 34 C61 42 59 50 62 52 C65 50 64 42 66 34 Z"/>
+</g>
+</svg>
