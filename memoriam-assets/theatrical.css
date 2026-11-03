@@ -348,3 +348,25 @@ thead th{box-shadow:0 2px 8px -2px #e0121e66}
 .bv-donate .bv-donate-cap{font-size:1.04rem!important;font-weight:700!important}
 .bv-donate .post-footer{font-size:13.5px!important;font-weight:700!important;justify-content:center;text-align:center;line-height:1.45}
 @media(max-width:720px){.bv-donate .bv-donate-cap{font-size:.94rem!important}.bv-donate .post-footer{font-size:13px!important}}
+/* ===== t120u phone pass (<=720px only; desktop untouched) ===== */
+@media(max-width:720px){
+ /* hard red "ghost" shadow overlapped the next line on wrapped headings/tile labels; tighten offsets on phones */
+ .site-main>section:not(#bv-memorial) h2,.site-main>div h2,.site-main section:not(#bv-memorial) h3,.summary-title,.bv-stat-label,.bv-sub-h{text-shadow:2px 2px 0 #000,3px 3px 0 #8d1218!important}
+ .bv-stat-label{line-height:1.2}
+ /* compact list: street names were cut off with an ellipsis; let them wrap */
+ .bv-c-main b{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;overflow-wrap:anywhere;line-height:1.25}
+ /* day-count tiles: keep digit rows aligned across a row when place names wrap */
+ .bv-since a{justify-content:flex-start}
+ .bv-since .clock-face.bv-since-face{margin-top:auto}
+}
+@media(max-width:480px){
+ /* In Memoriam title was squeezed to ~135px between the flame emblems, leaving "·" dangling on its own line */
+ .bv-stage .bv-wall-head{gap:4px!important;padding:0!important}
+ .bv-stage .bv-emb{width:36px!important}
+ #bv-memorial #bv-memorial-h{font-size:26px!important;letter-spacing:0!important}
+ .bv-memh-yr{white-space:nowrap}
+ /* 3-digit day counts crowded their boxes */
+ .bv-since .clock-face.bv-since-face{font-size:17px!important}
+ /* nav: "Contact" wrapped alone onto a second row */
+ .masthead nav{gap:8px 13px!important;justify-content:center}
+}
