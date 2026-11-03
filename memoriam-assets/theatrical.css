@@ -321,3 +321,19 @@ thead th{box-shadow:0 2px 8px -2px #e0121e66}
 .bv-qstrip ul{flex:1 1 100%;flex-direction:column;gap:6px;min-width:0}
 .bv-qstrip li{flex-wrap:wrap;justify-content:space-between;white-space:normal;row-gap:4px}
 }
+/* ===== t119u donations panel (above footer) ===== */
+.bv-donatemain{padding-top:26px;padding-bottom:10px}
+.bv-donate{position:relative;max-width:760px;margin:0 auto;border:3px solid #8d1218!important;text-align:center;overflow:visible}
+.bv-donate h2{display:inline-block;margin:4px 0 10px;padding:6px 18px;background:#000;color:#f2f2f2;border:2px solid #8d1218;text-transform:uppercase;letter-spacing:.06em;transform:rotate(-1deg)}
+.bv-donate .bv-donate-cap{display:table;margin:0 auto 12px;background:#ececec!important;color:#0b0b0b!important;text-shadow:none!important;border:2px solid #000;box-shadow:4px 4px 0 #8d1218;padding:4px 10px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;transform:rotate(-.4deg)}
+.bv-donate-text{max-width:560px;margin:0 auto 16px;color:#d6d6d6;line-height:1.5}
+.bv-donate-row{display:flex;flex-wrap:wrap;gap:12px 18px;justify-content:center;align-items:center;margin-bottom:12px}
+.bv-donate-btn{display:inline-flex;flex-direction:column;align-items:center;gap:2px;padding:10px 30px;background:#8d1218;color:#fff!important;text-decoration:none!important;font-weight:900;font-size:1.15rem;text-transform:uppercase;letter-spacing:.1em;border:3px solid #000;box-shadow:6px 6px 0 #000,0 0 14px #e0121e55;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.bv-donate-btn small{font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:none;color:#f0d0d0}
+.bv-donate-btn:hover,.bv-donate-btn:focus-visible{background:#a8151d;outline:2px solid #fff;outline-offset:2px}
+.bv-donate-note{color:#a9a9a9;font-size:.85rem;font-style:italic}
+.bv-sp-donate{width:70px;right:-14px;top:-22px}
+@media(max-width:720px){.bv-donate{margin:0 6px}.bv-donate h2{font-size:1.25rem;padding:6px 12px}.bv-donate-row{flex-direction:column}.bv-donate-btn{width:100%;max-width:280px;box-sizing:border-box}.bv-sp-donate{width:42px;right:-4px;top:-14px}}
+.bv-donate .post-footer{color:#9a9a9a!important;border-top-color:#8d121866!important}
+.bv-donate .bv-sp-donate{width:96px;right:-30px;top:-34px}
+@media(max-width:720px){.bv-donate .bv-donate-cap{letter-spacing:.04em;font-size:.72rem}.bv-donate .bv-sp-donate{width:60px;right:-12px;top:-22px}}

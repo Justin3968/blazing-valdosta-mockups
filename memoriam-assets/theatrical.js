@@ -192,3 +192,20 @@ if(!reduce&&'IntersectionObserver' in window){
  const fm=document.getElementById('bv-fell-map');if(fm)fm.setAttribute('data-stationary','true');
 })();
 })();
+
+// t119u: community-funding donations panel. Own section after Latest Indexed Report, directly above the footer; not tied to any victim or incident. Placeholder link only (no payment processing).
+(function(){
+ if(document.getElementById('bv-donate'))return;
+ const anchor=document.querySelector('body>.bv-divider')||document.querySelector('body>footer');if(!anchor)return;
+ const wrap=document.createElement('div');wrap.className='site-main bv-donatemain';
+ wrap.innerHTML='<section id="bv-donate" class="post panel bv-donate" aria-labelledby="bv-donate-h">'+
+  '<span class="bv-splat bv-sp-donate" aria-hidden="true"><img src="memoriam-assets/art/splat-a.svg" alt=""></span>'+
+  '<h2 id="bv-donate-h">Keep the Tracker Running</h2>'+
+  '<p class="bv-donate-cap">Support the Tracker · community&#8209;funded</p>'+
+  '<p class="bv-donate-text">This page is independent and community-funded. Donations help keep it running: hosting, public-records requests and upkeep.</p>'+
+  '<div class="bv-donate-row"><a class="bv-donate-btn" href="#donation-link-placeholder" data-donation-link="[Donation Link]" aria-label="Donate (link coming soon)">Donate <small>[Donation Link]</small></a>'+
+  '<span class="bv-donate-note">Donation link coming soon.</span></div>'+
+  '<div class="post-footer">Donations fund the page only. They are not connected to any person, victim or incident.</div></section>';
+ anchor.before(wrap);
+ wrap.querySelector('.bv-donate-btn').addEventListener('click',e=>e.preventDefault());
+})();
