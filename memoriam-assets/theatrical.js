@@ -18,23 +18,23 @@ document.body.insertAdjacentHTML('afterbegin',`<svg width="0" height="0" style="
 
 // Seeded random so the fire looks the same on every load.
 let seed=7;const rnd=(a,b)=>{seed=(seed*16807)%2147483647;return a+(b-a)*(seed/2147483647)};
-const tongue=(x,y,w,h,dx)=>`M${x-w/2},${y} C${x-w/2},${y-h*.45} ${x-w*.15+dx*.3},${y-h*.6} ${x+dx},${y-h} C${x+w*.2+dx*.35},${y-h*.55} ${x+w/2},${y-h*.42} ${x+w/2},${y} Z`;
-const flame=(x,y,s,lean)=>{const w=30*s,h=rnd(80,135)*s,dx=lean*s+rnd(-6,6)*s,d=rnd(0,2.2).toFixed(2);
- return `<g class="bv-fl" style="transform-origin:${x.toFixed(0)}px ${y.toFixed(0)}px;animation-delay:-${d}s"><path d="${tongue(x,y,w*1.15,h,dx)}" fill="url(#bvfRed)"/><path d="${tongue(x,y,w*.75,h*.72,dx*.7)}" fill="url(#bvfOr)"/><path d="${tongue(x,y,w*.4,h*.42,dx*.4)}" fill="url(#bvfYe)"/></g>`};
+// Cartoon fire: one chunky teardrop tongue with a curly tip, drawn in a unit box (base centre at 0,0, height 1).
+const TG='M0,0 C-.52,0 -.64,-.3 -.44,-.55 C-.3,-.74 -.1,-.82 .02,-1.02 C.24,-.97 .27,-.8 .12,-.76 C.36,-.66 .6,-.42 .52,-.2 C.46,-.04 .26,0 0,0 Z';
+const OL='#1a0505',CR='#e8230f',CO='#ff8a00',CY='#ffd21a',CH='#fff6c4';
+const tng=(x,y,w,h,sk,flip,fill,extra='')=>`<path d="${TG}" transform="translate(${x.toFixed(1)},${y.toFixed(1)}) skewX(${sk.toFixed(1)}) scale(${(flip?-w:w).toFixed(2)},${h.toFixed(2)})" fill="${fill}" vector-effect="non-scaling-stroke" ${extra}/>`;
+const hl=(x,y,w,h,sk)=>`<ellipse cx="${(x-w*.12+sk*-h*.004).toFixed(1)}" cy="${(y-h*.42).toFixed(1)}" rx="${(w*.07).toFixed(1)}" ry="${(h*.1).toFixed(1)}" fill="${CH}" opacity=".9"/>`;
+const flame=(x,y,s,lean)=>{const w=44*s,h=rnd(70,108)*s,sk=Math.max(-22,Math.min(22,-lean*1.1+rnd(-8,8))),fp=rnd(0,1)<.5,d=rnd(0,1.2).toFixed(2),du=rnd(.8,1.15).toFixed(2);
+ return `<g class="bv-fl" style="transform-origin:${x.toFixed(0)}px ${y.toFixed(0)}px;animation-delay:-${d}s;animation-duration:${du}s">${tng(x,y,w,h,sk,fp,CR,`stroke="${OL}" stroke-width="7" stroke-linejoin="round" paint-order="stroke"`)}${tng(x,y-h*.02,w*.66,h*.64,sk,fp,CO)}${tng(x,y-h*.03,w*.36,h*.36,sk,fp,CY)}${hl(x,y,w,h,sk)}</g>`};
 
-// Original Blazers-inspired flame emblem (not the school's logo): sharp swept tongues, dark outline.
-const P='M40,126 C16,122 4,102 8,82 C10,70 16,62 24,54 C21,66 23,74 29,78 C24,58 30,40 46,24 C43,40 47,50 55,56 C55,36 63,18 82,2 C75,22 77,38 85,50 C87,42 92,35 100,28 C95,44 99,58 99,72 C99,104 75,128 40,126 Z';
-const tf=(k,cx,cy)=>`translate(${(cx*(1-k)).toFixed(1)},${(cy*(1-k)).toFixed(1)}) scale(${k})`;
-const emblem=(cls,id)=>`<svg class="bv-emb ${cls}" viewBox="-6 -6 114 140" width="66" height="81" aria-hidden="true" focusable="false"><defs>
-<linearGradient id="bveR${id}" x1="0" y1="1" x2=".6" y2="0"><stop offset="0" stop-color="#8e0a0e"/><stop offset=".55" stop-color="#e0140f"/><stop offset="1" stop-color="#ff3c14"/></linearGradient>
-<linearGradient id="bveO${id}" x1="0" y1="1" x2=".6" y2="0"><stop offset="0" stop-color="#ff4a08"/><stop offset="1" stop-color="#ffa014"/></linearGradient>
-<linearGradient id="bveY${id}" x1="0" y1="1" x2=".5" y2="0"><stop offset="0" stop-color="#ffcf1a"/><stop offset="1" stop-color="#fff6c0"/></linearGradient></defs>
-<path d="${P}" fill="url(#bveR${id})" stroke="#0a0a0a" stroke-width="6" stroke-miterlimit="12" paint-order="stroke"/><path d="${P}" fill="url(#bveO${id})" transform="${tf(.72,52,124)}"/><path d="${P}" fill="url(#bveY${id})" transform="${tf(.44,54,124)}"/><path d="M14,96 C22,112 40,118 58,114" fill="none" stroke="#0a0a0a" stroke-width="3.5" stroke-linecap="round" opacity=".6"/></svg>`;
+// Original Blazers-inspired cartoon emblem (not the school's logo): three chunky curly tongues merged under one thick outline.
+const ET=[[30,124,46,70,14,1],[78,124,42,84,-12,0],[54,126,64,118,-4,0]];
+const emblem=(cls)=>{const sil=ET.map(t=>tng(t[0],t[1],t[2],t[3],t[4],t[5],CR)).join('');
+ return `<svg class="bv-emb ${cls}" viewBox="-4 -8 112 142" width="66" height="84" aria-hidden="true" focusable="false"><g stroke="${OL}" stroke-width="8" stroke-linejoin="round">${sil}</g>${sil}${ET.map(t=>tng(t[0],t[1]-2,t[2]*.6,t[3]*.62,t[4],t[5],CO)).join('')}${tng(54,124,26,52,-4,0,CY)}${tng(32,123,14,26,14,1,CY)}${tng(77,123,14,30,-12,0,CY)}<ellipse cx="44" cy="62" rx="5" ry="11" transform="rotate(14 44 62)" fill="${CH}"/><circle cx="47" cy="44" r="3" fill="${CH}"/></svg>`};
 
 if(wall){
  wall.classList.add('bv-stage');
  const cands=wall.querySelectorAll('.bv-wall-head .bv-candle');
- cands.forEach((c,k)=>c.outerHTML=emblem(k?'bv-emb-r':'bv-emb-l',k));
+ cands.forEach((c,k)=>c.outerHTML=emblem(k?'bv-emb-r':'bv-emb-l'));
  // Stamped totals inside the wall, computed exactly like the home clock (indexed 2026 reports through the review date).
  const S=window.SITE||{},list=(window.INCIDENTS||[]).filter(r=>S.year&&r.date>=S.year+'-01-01'&&r.date<=S.reviewed);
  const killed=list.reduce((n,r)=>n+r.fatal,0),wounded=list.reduce((n,r)=>n+r.injured,0);
