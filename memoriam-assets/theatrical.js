@@ -9,9 +9,9 @@ document.body.insertAdjacentHTML('afterbegin',`<svg width="0" height="0" style="
 <linearGradient id="bvfRed" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff3a12"/><stop offset=".55" stop-color="#d4140f"/><stop offset="1" stop-color="#7a0606" stop-opacity="0"/></linearGradient>
 <linearGradient id="bvfOr" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffd23a"/><stop offset=".5" stop-color="#ff7a10"/><stop offset="1" stop-color="#ff4a10" stop-opacity=".2"/></linearGradient>
 <linearGradient id="bvfYe" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fffbe0"/><stop offset=".6" stop-color="#ffe56a"/><stop offset="1" stop-color="#ffc400" stop-opacity=".3"/></linearGradient>
-<linearGradient id="bvFold" x1="0" x2="1"><stop offset="0" stop-color="#000"/><stop offset=".45" stop-color="#1d1a1a"/><stop offset=".6" stop-color="#2a2424"/><stop offset="1" stop-color="#000"/></linearGradient>
-<linearGradient id="bvCShade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset=".8" stop-color="#3b0a08" stop-opacity="0"/><stop offset="1" stop-color="#ff5a1a" stop-opacity=".35"/></linearGradient>
-<linearGradient id="bvVal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset="1" stop-color="#1a1414"/></linearGradient>
+<linearGradient id="bvFold" x1="0" x2="1"><stop offset="0" stop-color="#020202"/><stop offset=".28" stop-color="#0c0c0d"/><stop offset=".48" stop-color="#1b1b1d"/><stop offset=".6" stop-color="#2a2a2c"/><stop offset=".72" stop-color="#141415"/><stop offset="1" stop-color="#010101"/></linearGradient>
+<linearGradient id="bvCShade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".65"/><stop offset=".8" stop-color="#0a0a0a" stop-opacity="0"/><stop offset="1" stop-color="#3a3a3c" stop-opacity=".3"/></linearGradient>
+<linearGradient id="bvVal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset=".6" stop-color="#0e0e0f"/><stop offset="1" stop-color="#1f1f21"/></linearGradient>
 <filter id="bvGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 <filter id="bv-ink"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3" result="d"/><feTurbulence type="fractalNoise" baseFrequency="1.6" seed="9" result="g"/><feColorMatrix in="g" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.4 1.7" result="m"/><feComposite in="d" in2="m" operator="in"/></filter>
 </defs></svg><div class="bv-grain" aria-hidden="true"></div><div class="bv-vignette" aria-hidden="true"></div>`);
@@ -58,14 +58,14 @@ if(wall){
   let folds='';for(let x=-6;x<W+20;x+=Math.max(10,W/9))folds+=`<rect x="${x.toFixed(1)}" y="0" width="${Math.max(6,W/11).toFixed(1)}" height="${H}" fill="url(#bvFold)" opacity="${rnd(.5,.9).toFixed(2)}"/>`;
   const s0=Math.max(.42,Math.min(1,W/190));let fl='';
   const step=Math.max(24,46*s0);for(let y=H*.05;y<H*.985;y+=step*rnd(.8,1.1)){const t=y/H,s=s0*(.55+.6*t);fl+=flame(edge(t)-3,y+30*s,s,14)}
-  const ty=tb*H,tie=`<path d="M0,${ty-12} Q${W*.33},${ty+6} ${W*.54},${ty-4} L${W*.54},${ty+10} Q${W*.33},${ty+22} 0,${ty+8}Z" fill="#3a0a0c" stroke="#8a1a1a"/>`;
-  const svg=(cid)=>`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="overflow:visible"><defs><clipPath id="${cid}"><path d="${body}"/></clipPath></defs><g clip-path="url(#${cid})"><rect width="${W+4}" height="${H}" fill="#070707"/>${folds}<rect width="${W+4}" height="${H}" fill="url(#bvCShade)"/></g><path d="${line}" fill="none" stroke="#a3121c" stroke-width="3"/><path d="${line}" fill="none" stroke="#ff2a1a" stroke-width="10" opacity=".3" filter="url(#bvGlow)"/>${tie}</svg>`;
+  const ty=tb*H,tie=`<path d="M0,${ty-12} Q${W*.33},${ty+6} ${W*.54},${ty-4} L${W*.54},${ty+10} Q${W*.33},${ty+22} 0,${ty+8}Z" fill="#0b0b0c" stroke="#303033"/>`;
+  const svg=(cid)=>`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="overflow:visible"><defs><clipPath id="${cid}"><path d="${body}"/></clipPath></defs><g clip-path="url(#${cid})"><rect width="${W+4}" height="${H}" fill="#070707"/>${folds}<rect width="${W+4}" height="${H}" fill="url(#bvCShade)"/></g><path d="${line}" fill="none" stroke="#000" stroke-width="10" opacity=".55" filter="url(#bvGlow)"/><path d="${line}" fill="none" stroke="#2c2c2e" stroke-width="2.5"/>${tie}</svg>`;
   cl.innerHTML=svg('bvClipL');cr.innerHTML=svg('bvClipR');
   // Flames rising along the floor of the opening.
   const fs=Math.max(.45,Math.min(.95,fh/120));let f2='';for(let x=W*.45;x<w-W*.45;x+=rnd(16,26)*fs*1.2)f2+=flame(x,fh+4,rnd(.75,1.05)*fs,rnd(-10,10));
   ff.innerHTML=''; // curtain fire removed at Justin's request (flames still computed so the logo fire's seeded shapes stay identical)
   const sw=Math.max(70,Math.min(130,w/9));let q='';for(let x=w;x>-sw;x-=sw)q+=`Q${(x-sw/2).toFixed(1)},${x/sw%2<1?44:38} ${(x-sw).toFixed(1)},22 `;
-  val.innerHTML=`<svg width="${w}" height="48" viewBox="0 0 ${w} 48"><path d="M0,0 H${w} V22 ${q}V0 Z" fill="url(#bvVal)" stroke="#8d1218" stroke-width="2"/></svg>`;
+  val.innerHTML=`<svg width="${w}" height="48" viewBox="0 0 ${w} 48"><path d="M0,0 H${w} V22 ${q}V0 Z" fill="url(#bvVal)" stroke="#2a2a2c" stroke-width="2"/></svg>`;
  }
  draw();if(window.ResizeObserver)new ResizeObserver(()=>draw()).observe(wall);else addEventListener('resize',draw);
  if(document.fonts)document.fonts.ready.then(draw);

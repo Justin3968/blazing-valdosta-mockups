@@ -1,5 +1,5 @@
 /* Dark display fonts layer (headings gothic, body moody serif). Loaded last. */
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Pirata+One&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Grenze+Gotisch:wght@800&family=Pirata+One&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
 
 /* Main headings: heavy blackletter */
 h1, #bv-memorial-h {
@@ -10,7 +10,7 @@ h1, #bv-memorial-h {
   text-shadow: 0 2px 0 #000, 0 0 18px rgba(193,17,48,.55), 0 0 2px #000 !important;
 }
 #bv-memorial-h { font-size: clamp(1.8rem, 4vw, 3.4rem) !important; white-space: nowrap; line-height: 1.05 !important; }
-h1 { font-size: clamp(2.4rem, 4.8vw, 4.1rem) !important; line-height: 1.1 !important; color: #141414 !important; -webkit-text-fill-color: #141414; -webkit-text-stroke: 1.5px #5a5a5a; paint-order: stroke fill; text-shadow: -1px -1px 0 #5a5a5a, 1px -1px 0 #5a5a5a, -1px 1px 0 #5a5a5a, 1px 1px 0 #5a5a5a !important; }
+h1 { font-family: 'Grenze Gotisch', 'Pirata One', serif !important; font-weight: 800 !important; font-size: clamp(2.4rem, 4.8vw, 4.1rem) !important; line-height: 1.1 !important; letter-spacing: .02em !important; color: #000 !important; -webkit-text-fill-color: #000; -webkit-text-stroke: 1.6px #6b737b; paint-order: stroke fill; text-shadow: -1px -1px 0 #6b737b, 1px -1px 0 #6b737b, -1px 1px 0 #6b737b, 1px 1px 0 #6b737b !important; }
 
 /* Section headings: gothic display, still legible */
 h2, h2.bv-barh {
