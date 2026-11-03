@@ -117,4 +117,5 @@
  .bv-three.bv-board{border-width:8px;padding:40px 10px 24px}
  .bv-stamps{gap:8px}.bv-st{padding:2px 8px 0;border-width:3px}
 }
+.bv-logofire{position:relative;display:inline-block;isolation:isolate;text-shadow:0 2px 0 #000,1px 0 0 #000,-1px 0 0 #000,0 0 4px #000,0 0 8px #000a}.bv-lf{position:absolute;pointer-events:none;-webkit-text-stroke:0}.bv-lf svg{display:block}.bv-lf-back{z-index:-1}.bv-lf-front{z-index:1}
 @media(prefers-reduced-motion:reduce){.bv-fl,.bv-emb,.clock-face>span,#bv-fell-map .fatal-marker::after,.bv-since-face>i{animation:none!important}.bv-reveal{opacity:1!important;transform:none!important;transition:none!important}}

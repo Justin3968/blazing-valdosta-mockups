@@ -23,8 +23,8 @@ const TG='M0,0 C-.52,0 -.64,-.3 -.44,-.55 C-.3,-.74 -.1,-.82 .02,-1.02 C.24,-.97
 const OL='#1a0505',CR='#e8230f',CO='#ff8a00',CY='#ffd21a',CH='#fff6c4';
 const tng=(x,y,w,h,sk,flip,fill,extra='')=>`<path d="${TG}" transform="translate(${x.toFixed(1)},${y.toFixed(1)}) skewX(${sk.toFixed(1)}) scale(${(flip?-w:w).toFixed(2)},${h.toFixed(2)})" fill="${fill}" vector-effect="non-scaling-stroke" ${extra}/>`;
 const hl=(x,y,w,h,sk)=>`<ellipse cx="${(x-w*.12+sk*-h*.004).toFixed(1)}" cy="${(y-h*.42).toFixed(1)}" rx="${(w*.07).toFixed(1)}" ry="${(h*.1).toFixed(1)}" fill="${CH}" opacity=".9"/>`;
-const flame=(x,y,s,lean)=>{const w=44*s,h=rnd(70,108)*s,sk=Math.max(-22,Math.min(22,-lean*1.1+rnd(-8,8))),fp=rnd(0,1)<.5,d=rnd(0,1.2).toFixed(2),du=rnd(.8,1.15).toFixed(2);
- return `<g class="bv-fl" style="transform-origin:${x.toFixed(0)}px ${y.toFixed(0)}px;animation-delay:-${d}s;animation-duration:${du}s">${tng(x,y,w,h,sk,fp,CR,`stroke="${OL}" stroke-width="7" stroke-linejoin="round" paint-order="stroke"`)}${tng(x,y-h*.02,w*.66,h*.64,sk,fp,CO)}${tng(x,y-h*.03,w*.36,h*.36,sk,fp,CY)}${hl(x,y,w,h,sk)}</g>`};
+const flame=(x,y,s,lean,sw=7)=>{const w=44*s,h=rnd(70,108)*s,sk=Math.max(-22,Math.min(22,-lean*1.1+rnd(-8,8))),fp=rnd(0,1)<.5,d=rnd(0,1.2).toFixed(2),du=rnd(.8,1.15).toFixed(2);
+ return `<g class="bv-fl" style="transform-origin:${x.toFixed(0)}px ${y.toFixed(0)}px;animation-delay:-${d}s;animation-duration:${du}s">${tng(x,y,w,h,sk,fp,CR,`stroke="${OL}" stroke-width="${sw}" stroke-linejoin="round" paint-order="stroke"`)}${tng(x,y-h*.02,w*.66,h*.64,sk,fp,CO)}${tng(x,y-h*.03,w*.36,h*.36,sk,fp,CY)}${hl(x,y,w,h,sk)}</g>`};
 
 // Original Blazers-inspired cartoon emblem (not the school's logo): three chunky curly tongues merged under one thick outline.
 const ET=[[30,124,46,70,14,1],[78,124,42,84,-12,0],[54,126,64,118,-4,0]];
@@ -96,6 +96,30 @@ if(three){
 document.querySelectorAll('.bv-three-col>h2,.bv-dash-head>h2,.post.panel>h2').forEach(h=>h.classList.add('bv-barh'));
 // Ink-stamped big numbers (home running totals and Shooting Outcomes).
 document.querySelectorAll('.bv-stat.bv-hero .bv-stat-num,.bv-stat.bv-big .bv-stat-num,.bv-to-nums b').forEach(b=>b.classList.add('bv-inked'));
+
+// Header logo on fire: hide the fireball icon, cartoon tongues behind/between the letters and licking over the tops,
+// plus a few small ones in front along the base. Absolutely positioned, so header height and menu layout are unchanged.
+const lab=document.querySelector('.masthead .brand-label');
+if(lab){
+ const fb=document.querySelector('.masthead .brand-fireball');if(fb)fb.style.display='none';
+ lab.classList.add('bv-logofire');
+ lab.insertAdjacentHTML('afterbegin','<span class="bv-lf bv-lf-back" aria-hidden="true"></span>');
+ lab.insertAdjacentHTML('beforeend','<span class="bv-lf bv-lf-front" aria-hidden="true"></span>');
+ const back=lab.querySelector('.bv-lf-back'),front=lab.querySelector('.bv-lf-front');
+ const drawLogo=()=>{const sv=seed;seed=4242;
+  const w=lab.offsetWidth,h=lab.offsetHeight,fz=parseFloat(getComputedStyle(lab).fontSize)||37;
+  if(!w||!h){seed=sv;return}
+  const mob=innerWidth<=720,s=fz/(mob?118:104),pad=fz*.3,W=w+pad*2,H=h+fz*.6,base=H-h*.32;
+  let b='',f='';
+  for(let x=pad+fz*.05;x<W-pad;x+=fz*rnd(.36,.5))b+=flame(x,base-rnd(0,h*.15),s*rnd(.8,1.15),rnd(-8,8),5);
+  for(let x=pad+fz*.3;x<W-pad-fz*.2;x+=fz*rnd(.9,1.3))f+=flame(x,H-h*.04,s*rnd(.32,.42),rnd(-6,6),3.5);
+  const svg=c=>`<svg width="${W.toFixed(0)}" height="${H.toFixed(0)}" viewBox="0 0 ${W.toFixed(1)} ${H.toFixed(1)}" style="overflow:visible">${c}</svg>`;
+  back.style.cssText=`left:${(-pad).toFixed(1)}px;bottom:0;width:${W.toFixed(0)}px;height:${H.toFixed(0)}px`;
+  front.style.cssText=back.style.cssText;
+  back.innerHTML=svg(`<g filter="url(#bvGlow)">${b}</g>`);front.innerHTML=svg(f);seed=sv};
+ drawLogo();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(drawLogo);
+ let lw=0;if(window.ResizeObserver)new ResizeObserver(()=>{if(lab.offsetWidth!==lw){lw=lab.offsetWidth;requestAnimationFrame(drawLogo)}}).observe(lab);else addEventListener('resize',drawLogo);
+}
 
 // Slow fade-in as each section scrolls into view (skipped for reduced motion).
 if(!reduce&&'IntersectionObserver' in window){

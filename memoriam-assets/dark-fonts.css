@@ -10,7 +10,7 @@ h1, #bv-memorial-h {
   text-shadow: 0 2px 0 #000, 0 0 18px rgba(193,17,48,.55), 0 0 2px #000 !important;
 }
 #bv-memorial-h { font-size: clamp(1.8rem, 4vw, 3.4rem) !important; white-space: nowrap; line-height: 1.05 !important; }
-h1 { font-size: clamp(2rem, 4vw, 3.4rem) !important; line-height: 1.1 !important; }
+h1 { font-size: clamp(2.4rem, 4.8vw, 4.1rem) !important; line-height: 1.1 !important; color: #141414 !important; -webkit-text-fill-color: #141414; -webkit-text-stroke: 1.5px #5a5a5a; paint-order: stroke fill; text-shadow: -1px -1px 0 #5a5a5a, 1px -1px 0 #5a5a5a, -1px 1px 0 #5a5a5a, 1px 1px 0 #5a5a5a !important; }
 
 /* Section headings: gothic display, still legible */
 h2, h2.bv-barh {
