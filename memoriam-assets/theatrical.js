@@ -141,4 +141,47 @@ if(!reduce&&'IntersectionObserver' in window){
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('bv-in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px',threshold:.04});
  els.forEach(e=>{e.classList.add('bv-reveal');io.observe(e)});
 }
+
+// Layout (t90u/t93u): Running Totals stat grid wraps Past Years, Report Averages and Shooting Outcomes in an L; Latest Indexed Reports goes last.
+(function(){
+ const stats=document.querySelector('#dashboard .bv-stats');
+ const secs=[document.getElementById('historical'),document.getElementById('shot-clock'),document.querySelector('.featured-panels>.outcome-card')];
+ if(stats&&secs.every(Boolean)){
+  const corner=document.createElement('div');corner.className='bv-lcorner';
+  secs.forEach(s=>corner.appendChild(s));
+  secs[0].classList.add('bv-la-hist');secs[1].classList.add('bv-la-avg');secs[2].classList.add('bv-la-out');
+  // 2026 Monthly Shooting Trend moves into the corner, above Shooting Outcomes.
+  const trends=document.getElementById('trends');
+  if(trends){const it=trends.parentElement;trends.classList.add('bv-la-trend');corner.insertBefore(trends,secs[2]);if(it&&it.classList.contains('masonry-item')&&!it.children.length){it.hidden=true;it.style.display='none'}}
+  // Annual Crime Breakdown by Year: re-displays figures already on the page (Past Years table + Full Year / GBI cards). Nothing computed.
+  let tries=0;const buildACB=()=>{const rows=[...document.querySelectorAll('#history-rows tr')];const cardsReady=document.querySelectorAll('.summary-card .summary-title').length;if((!rows.length||!cardsReady)&&tries++<120){setTimeout(buildACB,250);return}
+  const idx={};document.querySelectorAll('.summary-card').forEach(c=>{const t=(c.querySelector('.summary-title')||{}).textContent||'',m=t.match(/^(\d{4}) Full Year \/ GBI$/);if(!m)return;const bm=[...c.querySelectorAll('.summary-lines b')],lab=(c.querySelector('.summary-lines')||{}).innerHTML||'';const k=lab.indexOf('Index Crimes:');if(k<0)return;const b=c.querySelector('.summary-lines').innerHTML.slice(k).match(/<b[^>]*>([^<]*)<\/b>/);if(b)idx[m[1]]=b[1]});
+  if(rows.length){
+   const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+   const body=rows.map(tr=>{const td=tr.querySelectorAll('td');if(td.length<4)return'';const a=td[0].querySelector('a'),yr=td[0].textContent.replace(/[^0-9]/g,'');
+    const ycell=a?'<a href="'+esc(a.href)+'" target="_blank" rel="noopener noreferrer">'+esc(yr)+' ↗</a>':esc(yr);
+    return '<tr><th scope="row">'+ycell+'</th><td class="bv-acb-m">'+esc(td[1].textContent)+'</td><td>'+esc(td[2].textContent)+'</td><td>'+esc(td[3].textContent)+'</td><td>'+(idx[yr]?esc(idx[yr]):'<span class="bv-acb-na">not on page</span>')+'</td></tr>'}).join('');
+   const acb=document.createElement('section');acb.className='post panel bv-acb bv-la-acb';
+   acb.innerHTML='<h2>Annual Crime Breakdown by Year</h2><p class="card-intro">Lowndes County · GBI reported offenses, full calendar years</p><div class="bv-acb-wrap"><table class="compact-table bv-acb-table"><thead><tr><th scope="col">Year</th><th scope="col">Murder</th><th scope="col">Robbery</th><th scope="col">Agg. assault</th><th scope="col">Index crimes</th></tr></thead><tbody>'+body+'</tbody></table></div><p class="bv-acb-note">Same figures shown in Previous Year Crime Statistics and the Full Year / GBI cards, arranged by year. Year links go to the GBI annual reports.</p>';
+   corner.insertBefore(acb,trends||secs[2]);
+   acb.querySelector('h2').classList.add('bv-barh');
+   // Quick-reference strip of past-year figures (same values), between the hero band and the stage.
+   const stage=document.getElementById('bv-memorial');
+   if(stage&&!document.querySelector('.bv-qstrip')){
+    const items=rows.map(tr=>{const td=tr.querySelectorAll('td');if(td.length<4)return'';const yr=td[0].textContent.replace(/[^0-9]/g,'');
+     return '<li><span class="bv-q-yr">'+esc(yr)+'</span><span>Murder <b>'+esc(td[1].textContent)+'</b></span><span>Robbery <b>'+esc(td[2].textContent)+'</b></span><span>Agg. assault <b>'+esc(td[3].textContent)+'</b></span>'+(idx[yr]?'<span>Index crimes <b>'+esc(idx[yr])+'</b></span>':'')+'</li>'}).join('');
+    const q=document.createElement('nav');q.className='bv-qstrip';q.setAttribute('aria-label','Past-year quick reference');
+    q.innerHTML='<span class="bv-q-tag">Past years · GBI</span><ul>'+items+'</ul>';
+    stage.before(q);
+   }
+  }};buildACB();
+  const cards=stats.querySelectorAll(':scope>.bv-stat');
+  stats.insertBefore(corner,cards[9]||null);
+  stats.classList.add('bv-lstats');
+  const fp=document.querySelector('.featured-panels');if(fp&&!fp.children.length)fp.hidden=true;
+ }
+ const latest=[...document.querySelectorAll('.masonry-item>section.post.panel')].find(x=>(x.querySelector('h2')||{}).textContent==='Latest Indexed Report');
+ const anchor=document.querySelector('body>.bv-divider')||document.querySelector('body>footer');
+ if(latest&&anchor){const item=latest.parentElement,tail=document.createElement('div');tail.className='site-main bv-tailmain';anchor.before(tail);tail.appendChild(latest);if(!item.children.length){item.hidden=true;item.style.display='none'}}
+})();
 })();
