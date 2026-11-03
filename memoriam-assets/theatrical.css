@@ -315,3 +315,9 @@ thead th{box-shadow:0 2px 8px -2px #e0121e66}
 .homicide-map-card.bv-nomap .map-layout{grid-template-columns:minmax(0,1fr)!important}
 .homicide-map-card.bv-nomap #map-reset,.homicide-map-card.bv-nomap .map-focus{display:none!important}
 @media(max-width:720px){.masthead{padding-top:58px!important}}
+/* t108u phone pass: past-year strip stacks one year per row instead of a hidden side-scroll */
+@media(max-width:600px){
+.bv-qstrip{height:auto;flex-wrap:wrap;overflow:visible;padding:8px;gap:8px}
+.bv-qstrip ul{flex:1 1 100%;flex-direction:column;gap:6px;min-width:0}
+.bv-qstrip li{flex-wrap:wrap;justify-content:space-between;white-space:normal;row-gap:4px}
+}
