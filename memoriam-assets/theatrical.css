@@ -365,8 +365,15 @@ thead th{box-shadow:0 2px 8px -2px #e0121e66}
  .bv-stage .bv-emb{width:36px!important}
  #bv-memorial #bv-memorial-h{font-size:26px!important;letter-spacing:0!important}
  .bv-memh-yr{white-space:nowrap}
+ /* still wrapped at 390 (title needs ~211px, had 184px): let the flame row use some curtain padding and scale the title with the viewport */
+ .bv-stage .bv-wall-head{margin-left:-14px!important;margin-right:-14px!important}
+ #bv-memorial #bv-memorial-h{font-size:min(26px,6vw)!important}
  /* 3-digit day counts crowded their boxes */
  .bv-since .clock-face.bv-since-face{font-size:17px!important}
  /* nav: "Contact" wrapped alone onto a second row */
  .masthead nav{gap:8px 13px!important;justify-content:center}
 }
+
+/* Build stamp (added by loader.js after the page scripts run) */
+footer{position:relative}
+footer .bv-build{position:absolute;right:10px;bottom:5px;font:10px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;color:rgba(255,255,255,.28);letter-spacing:.04em;pointer-events:none;user-select:all}

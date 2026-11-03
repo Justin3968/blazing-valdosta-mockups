@@ -7,15 +7,22 @@
 //   sources.json -> window.SOURCES, site.json -> window.SITE (review date; [data-site] spans are filled from it).
 // dashboard.js/.css add the running-totals layer; art.js/.css add the memorial wall and SVG motifs (art/).
 (function(){
-  var V='__BUILD__';var B='memoriam-assets/';
+  var V='__BUILD__';var B='memoriam-assets/';window.BV_BUILD=V;
   var scripts=['app.js','history.js','clock.js','locations.js','final-layout.js','county-boundary.js','homicide-map.js','hit-and-run.js','shots-fired.js','national-sources.js','visuals.js','pies.js','improvements.js','organize.js','contact-config.js','page-layout.js','collapsible.js','dashboard.js','art.js','graphics.js','memoriam-3col.js','vendor/qrcode-generator/qrcode.js','theatrical.js'];
   function next(i){
-    if(i>=scripts.length)return;
+    if(i>=scripts.length){done();return}
     var s=document.createElement('script');s.src=B+scripts[i]+'?v='+V;
     s.onload=function(){next(i+1)};
     s.onerror=function(){console.error('Failed to load '+scripts[i]);next(i+1)};
     document.body.appendChild(s);
   }
+  // Runs after the last page script: adds the build stamp (stamped by .github/workflows/pages.yml; "dev" when unstamped) and reveals the page.
+  function done(){
+    var f=document.querySelector('body > footer');
+    if(f&&!f.querySelector('.bv-build')){var b=document.createElement('span');b.className='bv-build';b.textContent=/^__/.test(V)?'dev':'build '+V;b.title='Deployed commit';f.appendChild(b)}
+    reveal();
+  }
+  function reveal(){requestAnimationFrame(function(){document.documentElement.classList.remove('bv-loading')})}
   var WORDS=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],TENS=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
   function spell(n){if(n<20)return WORDS[n];if(n<100)return TENS[Math.floor(n/10)]+(n%10?'-'+WORDS[n%10]:'');return String(n)}
   // Derives review-date strings and record counts from data/site.json + the data files, then fills [data-site] spans.
@@ -42,7 +49,7 @@
   }))
     .then(function(){siteInfo();next(0)})
     .catch(function(err){
-      console.error('Could not load site data',err);
+      console.error('Could not load site data',err);reveal();
       var m=document.getElementById('main');
       if(m)m.insertAdjacentHTML('afterbegin','<p style="padding:1rem;background:#da1a32;color:#fff">Site data could not be loaded. If you opened this file directly, serve the folder over http (e.g. <code>python3 -m http.server</code>).</p>');
     });
