@@ -22,7 +22,7 @@
     if(f&&!f.querySelector('.bv-build')){var b=document.createElement('span');b.className='bv-build';b.textContent=/^__/.test(V)?'dev':'build '+V;b.title='Deployed commit';f.appendChild(b)}
     reveal();
   }
-  function reveal(){requestAnimationFrame(function(){document.documentElement.classList.remove('bv-loading')})}
+  function reveal(){requestAnimationFrame(function(){document.documentElement.classList.remove('bv-loading');if(window.bvTop){bvTop();requestAnimationFrame(function(){bvTop()});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){bvTop()});setTimeout(function(){bvTop()},600)}})}
   var WORDS=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],TENS=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
   function spell(n){if(n<20)return WORDS[n];if(n<100)return TENS[Math.floor(n/10)]+(n%10?'-'+WORDS[n%10]:'');return String(n)}
   // Derives review-date strings and record counts from data/site.json + the data files, then fills [data-site] spans.
