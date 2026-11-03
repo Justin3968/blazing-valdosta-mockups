@@ -337,3 +337,10 @@ thead th{box-shadow:0 2px 8px -2px #e0121e66}
 .bv-donate .post-footer{color:#9a9a9a!important;border-top-color:#8d121866!important}
 .bv-donate .bv-sp-donate{width:96px;right:-30px;top:-34px}
 @media(max-width:720px){.bv-donate .bv-donate-cap{letter-spacing:.04em;font-size:.72rem}.bv-donate .bv-sp-donate{width:60px;right:-12px;top:-22px}}
+/* t122u: Scan-to-donate QR (black on white, thin red frame, hard shadow) */
+.bv-donate-qr{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.bv-qr-box{background:#fff;line-height:0;border:2px solid #8d1218;box-shadow:5px 5px 0 #000;min-width:96px;min-height:96px}
+.bv-qr-box svg{display:block;max-width:120px;height:auto}
+.bv-donate-qr figcaption{display:flex;flex-direction:column;align-items:center;gap:2px;color:#e6e6e6;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.bv-donate-qr figcaption small{color:#9a9a9a;font-size:.66rem;text-transform:none;letter-spacing:0;font-style:italic;max-width:150px;text-align:center}
+@media(max-width:720px){.bv-donate-row{gap:16px}}

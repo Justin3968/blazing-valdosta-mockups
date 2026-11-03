@@ -197,15 +197,23 @@ if(!reduce&&'IntersectionObserver' in window){
 (function(){
  if(document.getElementById('bv-donate'))return;
  const anchor=document.querySelector('body>.bv-divider')||document.querySelector('body>footer');if(!anchor)return;
+ // TODO: paste your PayPal.me link here, e.g. https://paypal.me/YourName
+ // This one spot updates BOTH the Donate button (href + data-donate-url) and the "Scan to donate" QR code.
+ const DONATE_URL='[Your PayPal.me Link]';
+ const LIVE=/^https?:\/\//i.test(DONATE_URL),HREF=LIVE?DONATE_URL:'#your-paypal-me-link';
  const wrap=document.createElement('div');wrap.className='site-main bv-donatemain';
  wrap.innerHTML='<section id="bv-donate" class="post panel bv-donate" aria-labelledby="bv-donate-h">'+
   '<span class="bv-splat bv-sp-donate" aria-hidden="true"><img src="memoriam-assets/art/splat-a.svg" alt=""></span>'+
   '<h2 id="bv-donate-h">Keep the Tracker Running</h2>'+
   '<p class="bv-donate-cap">Support the Tracker · community&#8209;funded</p>'+
   '<p class="bv-donate-text">This page is independent and community-funded. Donations help keep it running: hosting, public-records requests and upkeep.</p>'+
-  '<div class="bv-donate-row"><a class="bv-donate-btn" href="#donation-link-placeholder" data-donation-link="[Donation Link]" aria-label="Donate (link coming soon)">Donate <small>[Donation Link]</small></a>'+
-  '<span class="bv-donate-note">Donation link coming soon.</span></div>'+
+  '<div class="bv-donate-row"><a class="bv-donate-btn" href="'+HREF+'" data-donate-url="'+DONATE_URL+'"'+(LIVE?' target="_blank" rel="noopener"':'')+' aria-label="Donate via PayPal'+(LIVE?'':' (link coming soon)')+'">Donate via PayPal <small>'+(LIVE?'PayPal.me':DONATE_URL)+'</small></a>'+
+  '<figure class="bv-donate-qr"><div class="bv-qr-box" role="img" aria-label="QR code: scan to donate"></div><figcaption><b>Scan to donate</b>'+(LIVE?'':'<small>QR activates once PayPal.me link is added</small>')+'</figcaption></figure>'+
+  (LIVE?'':'<span class="bv-donate-note">TODO: PayPal.me link coming soon</span>')+'</div>'+
   '<div class="post-footer">Donations fund the page only. They are not connected to any person, victim or incident.</div></section>';
  anchor.before(wrap);
- wrap.querySelector('.bv-donate-btn').addEventListener('click',e=>e.preventDefault());
+ if(!LIVE)wrap.querySelector('.bv-donate-btn').addEventListener('click',e=>e.preventDefault());
+ // QR drawn from the same DONATE_URL (vendored qrcode-generator, memoriam-assets/vendor/qrcode-generator/qrcode.js).
+ const box=wrap.querySelector('.bv-qr-box');
+ if(box&&typeof qrcode==='function'){try{const q=qrcode(0,'M');q.addData(DONATE_URL);q.make();const n=q.getModuleCount()+8,cell=Math.max(2,Math.floor(108/n));box.innerHTML=q.createSvgTag({cellSize:cell,margin:cell*4,scalable:true});const sv=box.querySelector('svg');if(sv){sv.setAttribute('width',n*cell);sv.setAttribute('height',n*cell);sv.setAttribute('shape-rendering','crispEdges')}}catch(e){console.error('QR failed',e)}}
 })();

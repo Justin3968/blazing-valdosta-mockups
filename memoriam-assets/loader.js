@@ -7,8 +7,8 @@
 //   sources.json -> window.SOURCES, site.json -> window.SITE (review date; [data-site] spans are filled from it).
 // dashboard.js/.css add the running-totals layer; art.js/.css add the memorial wall and SVG motifs (art/).
 (function(){
-  var V='20261103q';var B='memoriam-assets/';
-  var scripts=['app.js','history.js','clock.js','locations.js','final-layout.js','county-boundary.js','homicide-map.js','hit-and-run.js','shots-fired.js','national-sources.js','visuals.js','pies.js','improvements.js','organize.js','contact-config.js','page-layout.js','collapsible.js','dashboard.js','art.js','graphics.js','memoriam-3col.js','theatrical.js'];
+  var V='20261103r';var B='memoriam-assets/';
+  var scripts=['app.js','history.js','clock.js','locations.js','final-layout.js','county-boundary.js','homicide-map.js','hit-and-run.js','shots-fired.js','national-sources.js','visuals.js','pies.js','improvements.js','organize.js','contact-config.js','page-layout.js','collapsible.js','dashboard.js','art.js','graphics.js','memoriam-3col.js','vendor/qrcode-generator/qrcode.js','theatrical.js'];
   function next(i){
     if(i>=scripts.length)return;
     var s=document.createElement('script');s.src=B+scripts[i]+'?v='+V;
