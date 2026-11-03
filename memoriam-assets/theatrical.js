@@ -199,7 +199,7 @@ if(!reduce&&'IntersectionObserver' in window){
  const anchor=document.querySelector('body>.bv-divider')||document.querySelector('body>footer');if(!anchor)return;
  // TODO: paste your PayPal.me link here, e.g. https://paypal.me/YourName
  // This one spot updates BOTH the Donate button (href + data-donate-url) and the "Scan to donate" QR code.
- const DONATE_URL='[Your PayPal.me Link]';
+ const DONATE_URL='https://paypal.me/blazingvaldosta';
  const LIVE=/^https?:\/\//i.test(DONATE_URL),HREF=LIVE?DONATE_URL:'#your-paypal-me-link';
  const wrap=document.createElement('div');wrap.className='site-main bv-donatemain';
  wrap.innerHTML='<section id="bv-donate" class="post panel bv-donate" aria-labelledby="bv-donate-h">'+
