@@ -110,8 +110,8 @@
 .bv-sources li small{display:block;color:#a9a9a9;margin-top:3px;line-height:1.35}
 
 /* ==== Grim night palette (all pages) ==== */
-html,body{background-color:#050505!important}
-body{background-image:radial-gradient(ellipse at top,#1a0306 0%,transparent 55%),repeating-linear-gradient(0deg,#ffffff03 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,#00000040 0 1px,transparent 1px 4px)!important;background-size:auto,auto,auto!important;color:#cfcfcf}
+html,body{background-color:#000000!important}
+body{background-image:none!important;color:#cfcfcf}
 .masthead{background-color:#000!important;border-bottom:3px solid var(--bv-homicide)!important}
 .masthead nav a,.header-actions a,.header-actions button{color:#e6e6e6}
 .post,.summary-card{background-color:#0a0a0a!important;background-image:repeating-linear-gradient(0deg,#ffffff02 0 1px,transparent 1px 3px)!important;border:1px solid #1e1e1e!important;border-top:2px solid #2c2c2c!important;box-shadow:0 0 0 1px #000,0 6px 18px #000a!important}
