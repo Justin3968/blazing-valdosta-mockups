@@ -1,0 +1,28 @@
+/* Dark display fonts layer (headings gothic, body moody serif). Loaded last. */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Pirata+One&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Main headings: heavy blackletter */
+h1, #bv-memorial-h {
+  font-family: 'UnifrakturCook', 'Pirata One', serif !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  letter-spacing: .01em !important;
+  text-shadow: 0 2px 0 #000, 0 0 18px rgba(193,17,48,.55), 0 0 2px #000 !important;
+}
+#bv-memorial-h { font-size: clamp(1.8rem, 4vw, 3.4rem) !important; white-space: nowrap; line-height: 1.05 !important; }
+h1 { font-size: clamp(2rem, 4vw, 3.4rem) !important; line-height: 1.1 !important; }
+
+/* Section headings: gothic display, still legible */
+h2, h2.bv-barh {
+  font-family: 'Pirata One', 'UnifrakturCook', serif !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: .03em !important;
+}
+
+/* Body text: readable, dark and moody serif */
+body, p, li, td, th, .bv-note, .chart-subhead, h3 {
+  font-family: 'Crimson Pro', Georgia, serif;
+}
+p, li { color: #cfc8bc; }
+@media (max-width: 720px) { #bv-memorial-h { white-space: normal; font-size: 2rem !important; } }
