@@ -344,3 +344,7 @@ thead th{box-shadow:0 2px 8px -2px #e0121e66}
 .bv-donate-qr figcaption{display:flex;flex-direction:column;align-items:center;gap:2px;color:#e6e6e6;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
 .bv-donate-qr figcaption small{color:#9a9a9a;font-size:.66rem;text-transform:none;letter-spacing:0;font-style:italic;max-width:150px;text-align:center}
 @media(max-width:720px){.bv-donate-row{gap:16px}}
+/* t123u: caption label + "Donations fund the page only…" line ~1.3x and bold */
+.bv-donate .bv-donate-cap{font-size:1.04rem!important;font-weight:700!important}
+.bv-donate .post-footer{font-size:13.5px!important;font-weight:700!important;justify-content:center;text-align:center;line-height:1.45}
+@media(max-width:720px){.bv-donate .bv-donate-cap{font-size:.94rem!important}.bv-donate .post-footer{font-size:13px!important}}
