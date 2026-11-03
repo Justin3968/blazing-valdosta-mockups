@@ -1,0 +1,159 @@
+/* Dashboard layer (dashboard.js): dense running totals, ticker, color-coded cards. */
+:root{
+ --bv-homicide:#e3132f;--bv-nonfatal:#ff7b1c;--bv-accidental:#f2c400;--bv-officer:#2f86ff;
+ --bv-defensive:#1fbf6a;--bv-otherhom:#ff4fa8;--bv-shots:#a45cff;--bv-hitrun:#14c8d8;--bv-mass:#fff;
+ --bv-panel:#141414;--bv-panel2:#1b1b1b;--bv-edge:#2e2e2e}
+.bv-t-homicide{--c:var(--bv-homicide)}.bv-t-nonfatal{--c:var(--bv-nonfatal)}.bv-t-accidental{--c:var(--bv-accidental)}
+.bv-t-officer{--c:var(--bv-officer)}.bv-t-defensive{--c:var(--bv-defensive)}.bv-t-otherhom{--c:var(--bv-otherhom)}
+.bv-t-shots{--c:var(--bv-shots)}.bv-t-hitrun{--c:var(--bv-hitrun)}
+/* Ticker */
+.bv-ticker{display:flex;align-items:stretch;background:#000;border-top:2px solid var(--bv-homicide);border-bottom:1px solid var(--bv-edge);font:700 13px/1 var(--body,Arial,sans-serif);overflow:hidden}
+.bv-ticker-tag{flex:none;display:flex;align-items:center;padding:0 14px;background:var(--bv-homicide);color:#fff;text-transform:uppercase;letter-spacing:.12em;font-family:var(--display);font-weight:900}
+.bv-ticker-window{flex:1;overflow:hidden;position:relative}
+.bv-ticker-track{display:inline-flex;white-space:nowrap;padding:10px 0;animation:bv-scroll 80s linear infinite;will-change:transform}
+.bv-ticker-set{display:inline-flex;gap:34px;padding-right:34px}
+.bv-ticker:hover .bv-ticker-track,.bv-ticker:focus-within .bv-ticker-track{animation-play-state:paused}
+@keyframes bv-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.bv-ticker-track{animation:none;padding-left:14px}.bv-ticker-window{overflow-x:auto}.bv-ticker-set[aria-hidden]{display:none}}
+.bv-tick{color:#eee;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.bv-tick b{color:var(--c);font-weight:900}.bv-tick:hover{color:#fff;text-decoration:underline}
+.bv-tick i,.bv-chip i{width:10px;height:10px;border-radius:2px;background:var(--c);display:inline-block;flex:none}
+/* Dashboard shell */
+.bv-dash{background:var(--bv-panel);border:1px solid var(--bv-edge);border-top:4px solid var(--bv-homicide);padding:18px;margin:0 0 22px;color:#eee}
+.bv-dash-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 18px;margin-bottom:6px}
+.bv-dash-head h2{margin:0;font-family:var(--display);font-weight:900;font-size:clamp(22px,3vw,32px);text-transform:uppercase;letter-spacing:.02em;color:#fff}
+.bv-dash-head span{color:#aaa;font-size:13px}.bv-dash-head.bv-sub{margin-top:22px}.bv-dash-head.bv-sub h2{font-size:22px}
+.bv-caveat{margin:4px 0 14px;padding:8px 12px;background:#2a0a0f;border-left:4px solid var(--bv-homicide);color:#f1d6da;font-size:13px;line-height:1.45}
+/* Stat blocks */
+.bv-stats{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-flow:dense;gap:6px}
+@media(max-width:1100px){.bv-stats{grid-template-columns:repeat(4,1fr)}}
+.bv-stat{background:var(--bv-panel2);border:1px solid var(--bv-edge);border-top:5px solid var(--c,#777);padding:10px 12px 11px;display:flex;flex-direction:column;gap:3px;min-height:112px}
+.bv-stat-label{font:900 12px/1.2 var(--body);text-transform:uppercase;letter-spacing:.08em;color:#cfcfcf}
+.bv-stat-num{font:900 46px/1 var(--display);color:var(--c,#fff);letter-spacing:-.01em}
+.bv-stat-sub{font-size:12px;color:#9d9d9d;line-height:1.3}
+.bv-stat.bv-days{grid-column:1/-1}
+.bv-stat.bv-hero{grid-column:span 2;grid-row:span 2;background:linear-gradient(160deg,#3a0610,#141414 70%);justify-content:center}
+.bv-stat.bv-hero .bv-stat-num{font-size:clamp(84px,11vw,132px);color:#fff;text-shadow:0 0 28px #e3132f88}
+.bv-stat.bv-hero .bv-stat-label{font-size:15px;color:#ff9aa8}
+.bv-stat.bv-big .bv-stat-num{font-size:58px}
+.bv-stat.bv-massstat{--c:#fff;border-top-style:double;border-top-width:6px}
+.bv-stat.bv-days{--c:#ddd;background:repeating-linear-gradient(45deg,#1b1b1b 0 10px,#191919 10px 20px)}
+.bv-stat.bv-empty .bv-stat-num{color:#555}.bv-stat.bv-empty .bv-stat-sub{color:#c9c9c9;font-style:italic}
+/* Legend */
+.bv-legend{display:flex;flex-wrap:wrap;gap:6px 8px;margin:14px 0 4px}
+.bv-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;background:#0c0c0c;border:1px solid var(--bv-edge);border-left:4px solid var(--c,#fff);font-size:12px;font-weight:700;color:#ddd}
+.bv-chip.bv-mass{--c:#fff}.bv-chip.bv-mass i{background:none;border:2px solid #fff;border-radius:50%}
+.incident-section .bv-legend{margin:8px 0 0}
+/* Charts */
+.bv-two{display:grid;grid-template-columns:3fr 2fr;gap:10px;margin-top:12px}
+.bv-panel{background:var(--bv-panel2);border:1px solid var(--bv-edge);padding:12px 14px}
+.bv-panel h3{margin:0;font:900 17px/1.2 var(--display);text-transform:uppercase;color:#fff}
+.bv-note{margin:3px 0 10px;font-size:12px;color:#999}
+.bv-bars{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;height:190px;align-items:end}
+.bv-bar{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;text-align:center}
+.bv-bar-stack{display:flex;flex-direction:column-reverse;min-height:2px;background:#2a2a2a}
+.bv-seg{background:var(--c);border-top:1px solid #141414}
+.bv-bar-n{font:900 14px/1 var(--display);color:#fff;margin-bottom:4px;min-height:14px}
+.bv-bar-m{font-size:11px;color:#aaa;margin-top:5px;text-transform:uppercase}
+.bv-brow{display:grid;grid-template-columns:130px 1fr auto;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #262626;font-size:13px}
+.bv-brow span{color:#ddd;font-weight:700;border-left:4px solid var(--c);padding-left:7px}
+.bv-btrack{height:12px;background:#262626}.bv-btrack div{height:100%;background:var(--c);min-width:0}
+.bv-brow b{font:900 16px/1 var(--display);color:var(--c);text-align:right;white-space:nowrap}
+/* Cards */
+.bv-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin-top:8px}
+.bv-card{background:var(--bv-panel2);border:1px solid var(--bv-edge);border-left:6px solid var(--c);padding:10px 12px;display:flex;flex-direction:column;gap:5px;background-image:linear-gradient(90deg,color-mix(in srgb,var(--c) 16%,transparent),transparent 55%)}
+.bv-card-top{display:flex;justify-content:space-between;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:900}
+.bv-card-type{color:var(--c)}.bv-card-date{color:#bbb}
+.bv-card h3{margin:0;font:800 15px/1.25 var(--display);color:#fff}
+.bv-card-place{margin:0;font-size:12px;color:#aaa}
+.bv-card-out{margin:0;font-size:13px;font-weight:700;color:#eee}
+.bv-mass-badge{font-style:normal;font-size:11px;border:1px solid #fff;border-radius:10px;padding:1px 6px;margin-left:4px}
+.bv-card-links{margin-top:auto;display:flex;gap:12px;align-items:center;font-size:12px}
+.bv-card-links a{color:var(--c);font-weight:700}
+.bv-card-more{background:none;border:1px solid #555;color:#ddd;font:700 11px var(--body);padding:3px 8px;cursor:pointer}
+.bv-card-more:hover{border-color:var(--c);color:#fff}
+/* Existing incident-log rows, colored by type */
+#incident-rows tr[data-bv-type]{background-image:linear-gradient(90deg,color-mix(in srgb,var(--c) 14%,transparent),transparent 40%)}
+#incident-rows tr[data-bv-type] td:first-child{box-shadow:inset 6px 0 0 var(--c)}
+#incident-rows tr[data-bv-type=homicide]{--c:var(--bv-homicide)}#incident-rows tr[data-bv-type=nonfatal]{--c:var(--bv-nonfatal)}
+#incident-rows tr[data-bv-type=accidental]{--c:var(--bv-accidental)}#incident-rows tr[data-bv-type=officer]{--c:var(--bv-officer)}
+#incident-rows tr[data-bv-type=defensive]{--c:var(--bv-defensive)}
+#incident-rows tr.bv-row-mass .report-title::after{content:" · 3+ shot";font-size:11px;color:#fff;opacity:.8}
+/* Existing shots-fired / hit-and-run cards get their type color */
+#shots-fired .traffic-report{border-left:5px solid var(--bv-shots);padding-left:10px}
+#hit-and-run .traffic-report{border-left:5px solid var(--bv-hitrun);padding-left:10px}
+/* Responsive */
+@media(max-width:950px){.bv-two{grid-template-columns:1fr}}
+@media(max-width:600px){
+ .bv-dash{padding:12px;margin-left:0;margin-right:0}
+ .bv-stats{grid-template-columns:repeat(2,1fr);gap:6px}
+ .bv-stat{min-height:96px;padding:8px 9px}.bv-stat-num{font-size:36px}.bv-stat.bv-big .bv-stat-num{font-size:42px}
+ .bv-stat.bv-hero{grid-row:auto}.bv-stat.bv-hero .bv-stat-num{font-size:88px}
+ .bv-bars{height:150px;gap:3px}.bv-bar-m{font-size:9px}
+ .bv-brow{grid-template-columns:100px 1fr auto;font-size:12px}
+ .bv-cards{grid-template-columns:1fr}
+ .bv-ticker{font-size:12px}.bv-ticker-tag{padding:0 9px}
+}
+
+/* Flags (unconfirmed / cause-not-stated) and linked events */
+.bv-flag{margin:0;padding:4px 7px;background:#2b2100;border:1px solid #f2c400;color:#ffe680;font-size:12px;font-weight:700}
+.bv-linked,.bv-row-linked{margin:0;font-size:11px;color:#bdbdbd;letter-spacing:.03em}
+.bv-row-flag{display:block;margin-top:4px;color:#ffe680;font-size:11px;font-weight:700}
+.bv-row-linked{display:block;margin-top:3px}
+/* Expanded source directory */
+.bv-sources{margin:16px 0 10px;border-top:1px solid #2a2a2a;padding-top:12px}
+.bv-sources h3{margin:0;font:800 18px/1.2 'Barlow Condensed',var(--display);text-transform:uppercase;color:#fff;letter-spacing:.04em}
+.bv-sources ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px}
+.bv-sources li{background:#0d0d0d;border:1px solid #232323;border-left:4px solid #555;padding:7px 9px;font-size:12px}
+.bv-sources li.bv-src-method{border-left-color:var(--bv-homicide)}
+.bv-sources li a{color:#fff;font-weight:700}.bv-sources li em{font-style:normal;font-size:10px;text-transform:uppercase;letter-spacing:.08em;background:var(--bv-homicide);color:#fff;padding:1px 5px;margin-left:4px}
+.bv-sources li small{display:block;color:#a9a9a9;margin-top:3px;line-height:1.35}
+
+/* ==== Grim night palette (all pages) ==== */
+html,body{background-color:#050505!important}
+body{background-image:radial-gradient(ellipse at top,#1a0306 0%,transparent 55%),repeating-linear-gradient(0deg,#ffffff03 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,#00000040 0 1px,transparent 1px 4px)!important;background-size:auto,auto,auto!important;color:#cfcfcf}
+.masthead{background-color:#000!important;border-bottom:3px solid var(--bv-homicide)!important}
+.masthead nav a,.header-actions a,.header-actions button{color:#e6e6e6}
+.post,.summary-card{background-color:#0a0a0a!important;background-image:repeating-linear-gradient(0deg,#ffffff02 0 1px,transparent 1px 3px)!important;border:1px solid #1e1e1e!important;border-top:2px solid #2c2c2c!important;box-shadow:0 0 0 1px #000,0 6px 18px #000a!important}
+.post h2,.summary-card h2,.route-hero h1{color:#fff;font-family:'Barlow Condensed',var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+.route-hero h1{font-size:clamp(28px,4vw,44px)}
+.coverage-notice{background:#170306!important;border:1px solid #3a0a12!important;border-left:5px solid var(--bv-homicide)!important;color:#f0d5d9}
+.update-line{color:#bdbdbd}
+select,input,textarea{background:#080808!important;color:#eee!important;border-color:#353535!important}
+th{background:#000;color:#fff;text-transform:uppercase;letter-spacing:.06em}
+td{background:#0c0c0c;color:#d6d6d6}
+tbody tr:nth-child(even) td{background:#101010}
+.category-pill{filter:saturate(1.2)}
+dialog{background:#0b0b0b;color:#ddd;border:1px solid #333}
+/* Dashboard numerals: stark white and red, heavy condensed */
+.bv-dash{background:#070707;border-color:#1f1f1f}
+.bv-stat{background:#0d0d0d;border-color:#1f1f1f}
+.bv-stat-num{font-family:'Barlow Condensed',Impact,var(--display);font-weight:800;color:#fff}
+.bv-t-homicide .bv-stat-num,.bv-t-otherhom .bv-stat-num{color:#ff2a40}
+.bv-stat.bv-hero .bv-stat-num{font-family:'Barlow Condensed',Impact,var(--display);color:#fff}
+.bv-stat.bv-empty .bv-stat-num{color:#6f6f6f}
+.bv-dash-head h2,.bv-panel h3{font-family:'Barlow Condensed',Impact,var(--display);font-weight:800;letter-spacing:.03em}
+.bv-ticker{background:#000;border-top:2px solid var(--bv-homicide);border-bottom:1px solid #2a2a2a}
+.bv-ticker-tag{font-family:'Barlow Condensed',Impact,var(--display);font-weight:800;font-size:15px}
+/* Map restyle */
+#fatality-map{background:#050505!important;border-color:#2a2a2a!important}
+#fatality-map .leaflet-overlay-pane path{fill:#151515;stroke:#8a8a8a}
+.county-place-label{color:#d7d7d7!important;text-shadow:0 1px 2px #000,0 0 4px #000!important}
+.county-name-label{color:#8e8e8e!important}
+.fatal-marker{background:#e3132f;box-shadow:0 0 0 3px #e3132f44,0 2px 10px #000}
+.fatal-marker-defensive{background:#138a4c}
+.map-dot-defensive{background:#1fbf6a!important}
+.map-report{border-color:#262626}
+/* Robberies and non-shooting assaults */
+:root{--bv-robbery:#c8893a;--bv-assault:#a8e02a}
+.bv-t-robbery{--c:var(--bv-robbery)}
+.bv-t-assault{--c:var(--bv-assault)}
+.bv-card.bv-low{border-style:dashed}
+.bv-filters{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
+.bv-fchip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;background:#0d0d0d;border:1px solid #333;color:#e6e6e6;font:700 12px/1 'Barlow Condensed',Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.bv-fchip i{width:10px;height:10px;background:var(--c,#fff);display:inline-block}
+.bv-fchip b{color:#fff}
+.bv-fchip[aria-pressed="true"]{background:#e3132f;border-color:#e3132f;color:#fff}
+.bv-fchip:disabled{opacity:.45;cursor:default}
+.bv-fchip:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.bv-card[hidden]{display:none}

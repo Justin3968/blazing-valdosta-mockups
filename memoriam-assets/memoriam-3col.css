@@ -1,0 +1,54 @@
+/* Mockup layer: three columns under the In Memoriam wall. Reuses the home page's clock, panel and marker styles. */
+.bv-three{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) minmax(0,.95fr);gap:20px;align-items:start;margin:0 0 4px}
+.bv-three-col{margin:0!important;min-width:0;border-top:3px solid #e3132f!important}
+.bv-three-col h2{margin-bottom:2px!important}
+.bv-col-sub{font-size:11px!important;line-height:1.45;color:#a9a9a9!important;margin:0 0 10px!important}
+.bv-col-note{font-size:10px!important;line-height:1.5;color:#8f8f8f!important;margin:8px 0 0!important}
+.bv-sub-h{font:800 15px/1.2 'Barlow Condensed',Impact,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin:16px 0 2px}
+.bv-clockcol .clock-board{padding:10px 6px 8px}
+.bv-clockcol .clock-face{font-size:clamp(28px,2.6vw,40px)}
+.bv-clockcol .bv-fatal-face>span{color:#ff2a40;border-bottom-color:#e3132f!important}
+.bv-since{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.bv-since a{display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;padding:7px 7px 2px;background:#070707;border:1px solid #1f1f1f;border-top:2px solid #e3132f;color:#c2c2c2;text-decoration:none}
+.bv-since a:hover,.bv-since a:focus-visible{border-color:#e3132f;background:#160307;outline:none}
+.bv-s-head{display:flex;flex-direction:column;gap:1px;min-height:44px}
+.bv-s-date{font:800 13px/1.1 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:#fff}
+.bv-s-place{font-size:10px;line-height:1.25;color:#d0ccc4}
+.bv-s-src{font-size:10px;color:#ff6b7c;font-weight:700}
+.bv-since .clock-face.bv-since-face{font-size:21px!important;gap:2px;justify-content:space-between}
+.bv-since .bv-since-face>span{min-width:28%;padding:2px 0;color:#ff2a40;border-bottom-color:#e3132f!important}
+.bv-since .bv-since-face>i{animation:bv-blink 2s steps(1) infinite}
+@keyframes bv-blink{50%{opacity:.25}}
+.bv-since .bv-since-units{margin:0 2px 4px;justify-content:space-between}
+.bv-since .bv-since-units span{font-size:8.5px!important;letter-spacing:.1em!important;min-width:28%;text-align:center}
+#bv-fell-map{height:380px;background:#050505;border:1px solid #2a2a2a;z-index:0}
+#bv-fell-map .leaflet-overlay-pane path{fill:#151515;stroke:#8a8a8a}
+#bv-fell-map .leaflet-control-attribution{background:#111d;color:#ccc;font-size:9px}
+#bv-fell-map .leaflet-control-attribution a{color:#9dc8d5}
+#bv-fell-map .leaflet-bar a{background:#1d1d1d;color:#eee;border-color:#555}
+#bv-fell-map .leaflet-popup-content-wrapper,#bv-fell-map .leaflet-popup-tip{background:#171717;color:#ddd}
+#bv-fell-map .leaflet-popup-content-wrapper a{color:#ff6b7c}
+#bv-fell-map .fatal-marker{width:26px;height:26px;font-size:12px}
+.bv-fell-key{list-style:none;margin:10px 0 0;padding:0;font-size:11px}
+.bv-fell-key li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid #1e1e1e}
+.bv-fell-key i{font-style:normal;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#e3132f;border:2px solid #fff;color:#fff;font:900 10px Arial,sans-serif;box-sizing:border-box}
+.bv-fell-key a{display:flex;flex-direction:column;color:#c2c2c2;text-decoration:none}
+.bv-fell-key a b{color:#fff} .bv-fell-key a span{font-size:10px;color:#a9a59d}
+.bv-fell-key a:hover b{color:#ff6b7c}
+.bv-fell-note{margin:10px 0 0!important;padding:7px 9px;border-left:3px solid #e3132f;background:#0d0d0d;font-size:10.5px!important;line-height:1.5;color:#d0ccc4!important}
+.bv-fell-note b{color:#fff}
+.bv-compact{list-style:none;margin:0;padding:0;border-top:1px solid #222}
+.bv-compact li{display:grid;grid-template-columns:3px 46px minmax(0,1fr) 44px 58px;gap:0 8px;align-items:center;padding:6px 0;border-bottom:1px solid #1c1c1c;font-size:11px}
+.bv-compact li::before{content:"";align-self:stretch;background:#e3132f}
+.bv-c-date{font:800 13px 'Barlow Condensed',Impact,sans-serif;color:#fff;text-transform:uppercase;letter-spacing:.03em}
+.bv-c-main{display:flex;flex-direction:column;min-width:0}
+.bv-c-main b{color:#f4f1ea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bv-c-main span{font-size:9.5px;color:#a9a59d;text-transform:uppercase;letter-spacing:.05em}
+.bv-c-n{font-size:10px;color:#bdbdbd;text-align:right}
+.bv-c-src{font-size:10px;font-weight:700;color:#ff6b7c;text-align:right;text-decoration:none}
+.bv-c-src:hover{text-decoration:underline}
+.bv-preview-tag{position:absolute;top:6px;right:14px;z-index:1000;background:#f2c400;color:#000;font:800 12px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;transform:rotate(2deg);border:2px dashed #000;pointer-events:none}
+@media(max-width:1100px){.bv-three{grid-template-columns:1fr 1fr}.bv-listcol{grid-column:1/-1}}
+@media(max-width:720px){.bv-three{grid-template-columns:1fr;gap:14px}.bv-listcol{grid-column:auto}#bv-fell-map{height:320px}.bv-since .clock-face.bv-since-face{font-size:20px!important}.bv-preview-tag{font-size:10px;top:4px;right:8px}}
+@media(max-width:720px){html,body{overflow-x:clip}}
+.table-wrap{position:relative} /* keeps .sr-only table headers inside the scroll box on mobile */

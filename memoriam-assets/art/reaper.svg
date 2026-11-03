@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <!-- Blazing Valdosta original art: hooded reaper silhouette with scythe. Hand-authored, CC0. -->
+  <path d="M152,26 L120,256" stroke="#d9d6cf" stroke-width="5" stroke-linecap="round"/>
+  <path fill="#d9d6cf" d="M152,26 C122,4 68,2 22,28 C70,18 116,24 148,42 Z"/>
+  <path fill="#d9d6cf" fill-rule="evenodd" d="M95,18 C70,18 56,42 56,70 C56,84 52,96 46,110 L28,238 L40,230 L50,244 L62,234 L74,248 L86,236 L98,250 L110,236 L122,248 L134,234 L146,244 L156,232 L164,238 L144,110 C138,100 134,86 134,70 C134,42 120,18 95,18 Z M95,46 C83,46 76,58 76,72 C76,88 84,98 95,98 C106,98 114,88 114,72 C114,58 107,46 95,46 Z"/>
+  <path fill="#d9d6cf" d="M126,118 C136,116 146,120 150,128 L142,136 C138,130 132,128 124,130 Z"/>
+  <circle cx="88" cy="72" r="2.6" fill="#e3132f"/><circle cx="103" cy="72" r="2.6" fill="#e3132f"/>
+</svg>

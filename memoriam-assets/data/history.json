@@ -1,0 +1,26 @@
+[
+  {
+    "year": 2024,
+    "murder": 5,
+    "robbery": 70,
+    "assault": 306,
+    "total": 3632,
+    "url": "https://gbi.georgia.gov/document/document/2024-crime-statistics-summary/download"
+  },
+  {
+    "year": 2023,
+    "murder": 10,
+    "robbery": 59,
+    "assault": 249,
+    "total": 3489,
+    "url": "https://gbi.georgia.gov/document/document/2023-crime-statistics-summary/download"
+  },
+  {
+    "year": 2022,
+    "murder": 17,
+    "robbery": 66,
+    "assault": 214,
+    "total": 2659,
+    "url": "https://gbi.georgia.gov/document/document/2022-crime-statistics-summary-report/download"
+  }
+]

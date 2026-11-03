@@ -1,0 +1,43 @@
+/* Tally-figure graphics (graphics.js) — white/red on near-black, condensed numerals. Icons: art/figure-*.svg / inline symbol (original, CC0). */
+.bv-fig{display:inline-block;width:12px;height:24px;line-height:0}
+.bv-fig svg{width:12px;height:24px;display:block}
+.bv-red{fill:#e3132f;color:#e3132f;filter:drop-shadow(0 0 3px #e3132f66)}
+.bv-white{fill:#f4f1ea;color:#f4f1ea}
+.bv-part{overflow:hidden;width:calc(12px * var(--f))}
+.bv-figs{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:flex-end}
+.bv-fgroup{display:inline-flex;gap:2px;padding-bottom:3px;border-bottom:2px solid #2c2c2c}
+.bv-key-red,.bv-key-white{display:inline-block;width:8px;height:16px;margin-right:5px;vertical-align:-3px;background:url(art/figure-red.svg) center/contain no-repeat}
+.bv-key-white{background-image:url(art/figure-white.svg)}
+/* (A) outcomes */
+.bv-tally-out{background:#070707;border:1px solid #1f1f1f;border-top:3px solid #e3132f;padding:12px}
+.bv-to-nums{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:6px;margin-bottom:12px}
+.bv-to-nums>div{background:#0d0d0d;border:1px solid #222;padding:8px 10px;display:flex;flex-direction:column}
+.bv-to-nums b{font:800 44px/1 'Barlow Condensed',Impact,sans-serif;color:#fff}
+.bv-to-total b{font-size:58px}
+.bv-to-k b{color:#ff2a40}
+.bv-to-nums span{font:700 11px/1.2 'Barlow Condensed',Impact,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#bdbdbd;margin-top:4px}
+.bv-to-key{display:flex;flex-wrap:wrap;gap:4px 14px;margin:10px 0 0;font-size:12px;color:#d0ccc4}
+.bv-to-key small{flex-basis:100%;color:#a9a9a9}
+/* (B1) previous-year statistics */
+#history-chart.bv-skinned{display:block;height:auto;min-height:0;background:#070707;border:1px solid #1f1f1f;border-top:3px solid #e3132f;padding:10px 12px;margin:8px 0}
+.bv-hrow{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed #262626}
+.bv-hrow:last-child{border-bottom:0}
+.bv-hyear{font:800 18px/1 'Barlow Condensed',Impact,sans-serif;color:#bdbdbd}
+.bv-hnum{font:800 30px/1 'Barlow Condensed',Impact,sans-serif;color:#fff;min-width:2.2ch;text-align:right}
+.bv-hrow.bv-sel .bv-hyear{color:#fff}.bv-hrow.bv-sel .bv-hnum{color:#ff2a40}
+.bv-hrow .bv-figs{gap:4px 8px}
+.bv-hunit{margin:8px 0 0;font-size:11px;color:#a9a9a9}
+.annual-highlight b{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:800;color:#ff2a40}
+/* (B2) indexed report averages: condensed white/red digit tiles with a figure mark per caption */
+.clock-board{background:#070707!important;border:1px solid #1f1f1f;border-top:3px solid #e3132f}
+.clock-caption{display:flex;align-items:center;justify-content:center;gap:8px;font:800 15px/1.2 'Barlow Condensed',Impact,sans-serif!important;letter-spacing:.08em;text-transform:uppercase;color:#fff!important}
+.clock-caption::before{content:"";width:12px;height:24px;flex:none;background:url(art/figure-white.svg) center/contain no-repeat}
+#fatal-caption::before{background-image:url(art/figure-red.svg);filter:drop-shadow(0 0 3px #e3132f88)}
+.clock-face{font-family:'Barlow Condensed',Impact,sans-serif!important;font-weight:800!important}
+.clock-face>span{background:#0d0d0d!important;border:1px solid #2a2a2a!important;border-bottom:2px solid #3a3a3a!important;color:#fff;box-shadow:inset 0 -12px 18px #0008}
+#murder-clock>span{color:#ff2a40;border-bottom-color:#e3132f!important}
+.clock-face>i{color:#6f6f6f}
+.clock-units span{font:700 11px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#a9a9a9}
+.clock-period{font-family:'Barlow Condensed',Impact,sans-serif;letter-spacing:.1em;color:#d0ccc4}
+.clock-sample-counts b{font:800 22px 'Barlow Condensed',Impact,sans-serif;color:#fff}
+@media(max-width:600px){.bv-to-nums b{font-size:34px}.bv-to-total b{font-size:44px}.bv-hrow{grid-template-columns:38px 1fr auto;gap:6px}.bv-hnum{font-size:24px}}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" width="120" height="60">
+  <!-- Blazing Valdosta original art: tileable dark memorial-wall brick texture. Hand-authored, CC0. -->
+  <defs>
+    <filter id="grit"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="11" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .05 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+  </defs>
+  <rect width="120" height="60" fill="#050505"/>
+  <g fill="#121111">
+    <rect x="1" y="1" width="58" height="27" rx="1"/><rect x="61" y="1" width="58" height="27" rx="1"/>
+    <rect x="-29" y="31" width="58" height="28" rx="1"/><rect x="31" y="31" width="58" height="28" rx="1"/><rect x="91" y="31" width="58" height="28" rx="1"/>
+  </g>
+  <g fill="#161414" opacity=".8"><rect x="61" y="1" width="58" height="27"/><rect x="-29" y="31" width="58" height="28"/><rect x="91" y="31" width="58" height="28"/></g>
+  <rect width="120" height="60" fill="#fff" filter="url(#grit)"/>
+</svg>

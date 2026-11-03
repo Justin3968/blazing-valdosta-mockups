@@ -1,0 +1,302 @@
+[
+  {
+    "name": "WALB daily XML sitemap (Arc)",
+    "url": "https://www.walb.com/arc/outboundfeeds/sitemap/2026-10-25/?outputType=xml",
+    "covers": "Every WALB article URL for a given date (swap in the date)",
+    "usefulness": "Very high. The best backfill tool: pull every day of the year and grep for valdosta/lowndes + shoot/shot/killed. Found most of this list.",
+    "access": "Free; HTTP 200 via curl. The /video/ URLs duplicate articles.",
+    "citedBefore": "domain yes (WALB articles); the sitemap method is new",
+    "method": true,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "WCTV daily XML sitemap (Arc)",
+    "url": "https://www.wctv.tv/arc/outboundfeeds/sitemap/2026-10-25/?outputType=xml",
+    "covers": "Same as above for WCTV (Tallahassee; covers Lowndes)",
+    "usefulness": "High; corroborates WALB and sometimes has stories WALB lacks",
+    "access": "Free; HTTP 200",
+    "citedBefore": "domain yes; the sitemap method is new",
+    "method": true,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Valdosta Daily Times daily sitemap",
+    "url": "https://valdostadailytimes.com/sitemap.xml",
+    "covers": "Daily article index (?yyyy=2026&mm=MM&dd=DD)",
+    "usefulness": "High. VDT republishes most VPD releases with dates, blocks, and charges",
+    "access": "Free index; articles loaded via WebFetch (raw curl gets a JS shell). Some content may be metered.",
+    "citedBefore": "no",
+    "method": true,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Lanier County News (WordPress sitemap)",
+    "url": "https://www.laniercountynewsonline.com/wp-sitemap.xml",
+    "covers": "Regional outlet that rewrites VPD/LCSO releases in English and Spanish",
+    "usefulness": "Medium-high; carried the Old Hudson St robbery shooting and gives exact dates/times",
+    "access": "Free; HTTP 200",
+    "citedBefore": "yes (domain)",
+    "method": true,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Fox 49 (WFXL sister) local news",
+    "url": "https://fox49.tv/news/local",
+    "covers": "Republishes VPD releases nearly verbatim",
+    "usefulness": "Medium-high; often has the cleanest incident date/time",
+    "access": "Free; HTTP 200",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "WTXL Lowndes County section",
+    "url": "https://www.wtxl.com/news/local-news/in-your-neighborhood/lowndes-county",
+    "covers": "Tallahassee ABC affiliate's Lowndes page",
+    "usefulness": "Medium; corroboration, LCSO social-post quotes",
+    "access": "Free; HTTP 200",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "WSAV crime & safety",
+    "url": "https://www.wsav.com/crime-safety/",
+    "covers": "Savannah station that sometimes picks up Valdosta items",
+    "usefulness": "Low-medium; corroboration only",
+    "access": "403 to curl (bot-blocked); try a browser",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Georgia Attorney General press releases",
+    "url": "https://law.georgia.gov/press-releases",
+    "covers": "Gang Prosecution Unit indictments (e.g., Remerton 2025 homicide indicted Aug 2026)",
+    "usefulness": "Medium for follow-ups/outcomes; rarely first reports",
+    "access": "Free; HTTP 200",
+    "citedBefore": "yes",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Southern Judicial Circuit (DA / courts)",
+    "url": "https://southernjudicialcircuit.com/",
+    "covers": "Circuit court calendars and announcements; DA directory at lowndescounty.com",
+    "usefulness": "Low for discovery; useful for case outcomes",
+    "access": "Returned HTTP 202 (bot challenge); DA contact page: https://lowndescounty.com/m/directory/department?did=41",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Lowndes County Odyssey court portal",
+    "url": "https://portalprod.lowndescounty.com/PortalProd/",
+    "covers": "Superior/State/Magistrate case search, dockets, hearings",
+    "usefulness": "Medium for outcomes: search suspect names for agg assault/murder charges",
+    "access": "Free; some searches need registration",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "re:SearchGA (Tyler)",
+    "url": "https://researchga.tylerhost.net/",
+    "covers": "Statewide case records portal",
+    "usefulness": "Medium for dispositions",
+    "access": "Free account; documents may cost money",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Lowndes County Sheriff - inmate search",
+    "url": "https://www.lowndessheriff.com/inmate-search",
+    "covers": "Jail bookings and charges",
+    "usefulness": "Medium: confirms arrest dates and charges (agg assault, murder)",
+    "access": "Free; HTTP 200. Bookings don't prove someone was shot",
+    "citedBefore": "domain yes; the inmate-search page is new",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Lowndes County Coroner's Office",
+    "url": "https://www.lowndescounty.com/395/Coroners-Office",
+    "covers": "Coroner Austin Fiveash; death investigations",
+    "usefulness": "Medium-high for fatal counts if you request them (manner/cause by month)",
+    "access": "Open-records request (afiveash@lowndescounty.com, 229-375-6597). The /170/Coroner page showed a maintenance notice",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Georgia DPH OASIS",
+    "url": "https://oasis.state.ga.us/",
+    "covers": "County-level firearm deaths and ER/hospital discharges by intent",
+    "usefulness": "High for checking totals: gives the true count of Lowndes firearm injuries, not incident-level",
+    "access": "Free; data lags 1-2 years (no 2026 yet)",
+    "citedBefore": "no (site cites dph.georgia.gov)",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "CDC WISQARS",
+    "url": "https://wisqars.cdc.gov/",
+    "covers": "National firearm injury/death data by county",
+    "usefulness": "Medium for benchmarking; no incident detail",
+    "access": "Free; lags; cdc.gov/injury returned 403 to curl",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "FBI Crime Data Explorer",
+    "url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/crime-trend",
+    "covers": "Agency-level NIBRS (VPD, LCSO) agg assault/homicide counts",
+    "usefulness": "Medium for benchmarking annual totals",
+    "access": "Free; JS app; lags a year",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Gun Violence Archive incident query",
+    "url": "https://www.gunviolencearchive.org/query",
+    "covers": "Incident-level US shootings, each with a source link",
+    "usefulness": "High: filter by GA + city Valdosta; lists the May 3 travel center mass shooting",
+    "access": "Free; query page works; results need a browser (JS/captcha possible)",
+    "citedBefore": "yes",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "The Trace",
+    "url": "https://www.thetrace.org/",
+    "covers": "National gun-violence journalism and datasets",
+    "usefulness": "Low for local discovery; useful context and data methods",
+    "access": "Free",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Mapping Police Violence",
+    "url": "https://mappingpoliceviolence.org/",
+    "covers": "Database of killings by police",
+    "usefulness": "Medium for law-enforcement shootings (Sept 29 LCSO case)",
+    "access": "Free",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Broadcastify - Lowndes County GA feeds",
+    "url": "https://www.broadcastify.com/listen/ctid/474",
+    "covers": "Live scanner audio",
+    "usefulness": "Low: VPD/fire P25 talkgroups are encrypted per RadioReference; archives need a premium account",
+    "access": "Free live; archives paid",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "RadioReference - Lowndes P25 system",
+    "url": "https://www.radioreference.com/db/sid/8427",
+    "covers": "Talkgroup list (shows which channels are encrypted)",
+    "usefulness": "Low; tells you scanner coverage won't help much",
+    "access": "Free",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "VPD Facebook",
+    "url": "https://www.facebook.com/ValdostaPoliceDepartment",
+    "covers": "Original VPD press releases (often first)",
+    "usefulness": "High, but the same releases reach Valdosta Today/VDT/Fox49 within days",
+    "access": "Login wall for full browsing; loads (200)",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "LCSO Facebook",
+    "url": "https://www.facebook.com/LowndesCountySheriffsOffice",
+    "covers": "Sheriff statements (county incidents often appear only here first)",
+    "usefulness": "High for unincorporated county cases, which get less press",
+    "access": "Login wall",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Lowndes County Fire Rescue Facebook",
+    "url": "https://www.facebook.com/LowndesCountyFireRescue",
+    "covers": "Fire/EMS posts",
+    "usefulness": "Low",
+    "access": "Login wall",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Nextdoor / Citizen app",
+    "url": "https://citizen.com/",
+    "covers": "Crowd-sourced incident alerts",
+    "usefulness": "Low and unverified; leads only, never a source",
+    "access": "Account required",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Legacy.com Valdosta obituaries",
+    "url": "https://www.legacy.com/us/obituaries/local/georgia/valdosta",
+    "covers": "Obituaries",
+    "usefulness": "Low-medium: helps name victims and confirm deaths",
+    "access": "Free",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Valdosta State University police (Clery ASFR / crime log)",
+    "url": "https://www.valdosta.edu/administration/finance-admin/police/records.php",
+    "covers": "Campus crime log and annual report",
+    "usefulness": "Low (no 2026 campus shootings found)",
+    "access": "Log is in person or by openrecords@valdosta.edu; the online daily-log URL I guessed returned 404",
+    "citedBefore": "yes (domain)",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Moody AFB news",
+    "url": "https://www.moody.af.mil/News/",
+    "covers": "Base news",
+    "usefulness": "Very low",
+    "access": "403 to curl",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "GPS press - Valdosta State Prison public record",
+    "url": "https://gps.press/research-library/valdosta-state-prison-the-public-record-2015-to-2026/",
+    "covers": "Prison incidents (inside Lowndes County)",
+    "usefulness": "Low; prison violence is mostly stabbings, but worth checking for custody shootings",
+    "access": "Free",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  },
+  {
+    "name": "Lowndes County Schools",
+    "url": "https://www.lowndes.k12.ga.us/",
+    "covers": "District alerts",
+    "usefulness": "Very low",
+    "access": "Bot challenge page on curl",
+    "citedBefore": "no",
+    "method": false,
+    "added": "2026-11-02"
+  }
+]

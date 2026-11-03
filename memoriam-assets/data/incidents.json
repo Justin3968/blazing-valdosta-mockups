@@ -1,0 +1,561 @@
+[
+  {
+    "id": "LC-2026-1025A",
+    "date": "2026-10-25",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "North Troup Street",
+    "location": "Convenience store, 1300 block of North Troup Street",
+    "title": "Man wounded outside store before armed suspect is shot by clerk",
+    "category": "criminal",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-10-30",
+    "reviewed": "2026-11-02",
+    "source": "Valdosta Today / VPD release",
+    "sourceType": "Republished police release",
+    "url": "https://valdostatoday.com/news-2/local/2026/10/valdosta-store-employee-fatally-shoots-armed-man-in-self-defense/",
+    "summary": "Police reported a 53-year-old man allegedly shot a 38-year-old man outside the store; the 38-year-old was treated and released. This record covers that initial alleged criminal shooting. The same event's fatal defensive shooting of the 53-year-old by the store clerk is indexed separately as LC-2026-1025B so each shooting keeps its own category.",
+    "status": "Suspect died in the linked defensive shooting; names not released",
+    "linkedEvent": "EV-2026-1025",
+    "updates": [
+      {
+        "date": "2026-10-29",
+        "url": "https://www.wctv.tv/2026/10/29/convenience-store-employee-shoots-man-self-defense-after-gunshots-heard-outside-store-according-vpd/",
+        "summary": "WCTV report attributed to VPD on the same event."
+      },
+      {
+        "date": "2026-11-02",
+        "url": "https://valdostadailytimes.com/2026/11/02/vpd-fatal-shooting-was-self-defense/",
+        "summary": "Valdosta Daily Times follow-up: VPD says the clerk's shooting was self-defense."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-1025B",
+    "date": "2026-10-25",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "North Troup Street",
+    "location": "Convenience store, 1300 block of North Troup Street",
+    "title": "Store clerk fatally shoots armed man in reported self-defense",
+    "category": "defensive",
+    "fatal": 1,
+    "injured": 0,
+    "published": "2026-10-30",
+    "reviewed": "2026-11-02",
+    "source": "Valdosta Today / VPD release",
+    "sourceType": "Republished police release",
+    "url": "https://valdostatoday.com/news-2/local/2026/10/valdosta-store-employee-fatally-shoots-armed-man-in-self-defense/",
+    "summary": "After allegedly shooting a man outside, the 53-year-old entered the store armed and threatened the clerk, who shot and killed him. VPD described the clerk's shooting as self-defense and reported no charges. Classified as reported defensive, consistent with LC-2026-1001; the initial wounding is LC-2026-1025A.",
+    "status": "VPD reports self-defense; clerk not charged",
+    "linkedEvent": "EV-2026-1025",
+    "updates": [
+      {
+        "date": "2026-10-29",
+        "url": "https://www.wctv.tv/2026/10/29/convenience-store-employee-shoots-man-self-defense-after-gunshots-heard-outside-store-according-vpd/",
+        "summary": "WCTV report attributed to VPD."
+      },
+      {
+        "date": "2026-11-02",
+        "url": "https://valdostadailytimes.com/2026/11/02/vpd-fatal-shooting-was-self-defense/",
+        "summary": "Valdosta Daily Times: VPD says the fatal shooting was self-defense."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-1001",
+    "date": "2026-10-01",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "Bemiss Road",
+    "location": "Dollar General, 2100 block of Bemiss Road",
+    "title": "Man injured in reported defensive shooting at store",
+    "category": "defensive",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-10-12",
+    "reviewed": "2026-10-13",
+    "source": "WALB / Valdosta Police Department",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/10/12/no-charges-man-who-shot-attacker-inside-valdosta-dollar-general/",
+    "summary": "Police reported one man shot during a confrontation at a Dollar General after a bystander intervened in an alleged assault. The man survived and was released from hospital. Police said the bystander would not face charges. Non-gunshot injuries from the reported assault are excluded from these firearm counts.",
+    "status": "Police reported no charges against the shooter; alleged assault charges reported against the injured man"
+  },
+  {
+    "id": "LC-2026-0929",
+    "date": "2026-09-29",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "East Brookwood Drive",
+    "location": "700 block, East Brookwood Drive",
+    "title": "Fatal shooting involving sheriff’s deputies",
+    "category": "officer",
+    "fatal": 1,
+    "injured": 0,
+    "published": "2026-09-30",
+    "reviewed": "2026-10-13",
+    "source": "Georgia Bureau of Investigation",
+    "sourceType": "Official release",
+    "url": "https://gbi.georgia.gov/press-releases/2026-09-30/gbi-investigates-officer-involved-shooting-valdosta-ga",
+    "summary": "The GBI reported that a woman died after being shot by Lowndes County deputies in Valdosta. The release describes an active investigation. This fatality is classified separately from alleged criminal shootings.",
+    "status": "Investigation ongoing in cited release"
+  },
+  {
+    "id": "LC-2026-0907",
+    "date": "2026-09-07",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "Old Statenville Road",
+    "location": "Brittany Woods Apartments, 1150 Old Statenville Road",
+    "title": "Child injured in reported accidental discharge at apartment",
+    "category": "accidental",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-09-15",
+    "reviewed": "2026-10-13",
+    "source": "WALB / Valdosta Police Department",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/09/15/mother-arrested-9-year-old-charged-after-10-year-old-shot-valdosta-apartment/",
+    "summary": "Police reported a ten-year-old with a gunshot injury after a firearm discharged at an apartment. The child was stable in the cited update. The reported account of children playing with the gun was disputed by the injured child’s mother. This entry follows the source’s accidental-discharge description while preserving that dispute.",
+    "status": "Reckless-conduct charges reported; circumstances disputed by the victim’s family"
+  },
+  {
+    "id": "LC-2026-0817",
+    "date": "2026-08-17",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "River Street",
+    "location": "Ashton Park Apartments, 1300 block of River Street",
+    "title": "One killed, one injured in apartment shooting",
+    "category": "criminal",
+    "fatal": 1,
+    "injured": 1,
+    "published": "2026-08-19",
+    "reviewed": "2026-10-13",
+    "source": "WALB / Valdosta Police Department",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/08/19/man-dies-after-shooting-valdosta-apartment-complex/",
+    "summary": "Police reported a twenty-four-year-old died after being shot at an apartment complex. An August 21 update links a seventeen-year-old with an abdominal gunshot wound to the same exchange of gunfire. Both people are counted in this one incident, including the injured suspect. Two arrests were reported. The separate July 27 homicide is not counted again.",
+    "status": "Two arrests reported in August 21 update; charges are allegations and court outcome is unverified"
+  },
+  {
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "category": "criminal",
+    "reviewed": "2026-10-13",
+    "id": "LC-2026-0727",
+    "date": "2026-07-27",
+    "place": "East Park Avenue",
+    "location": "Prospers Apartments, 1503 East Park Avenue",
+    "title": "Man killed in apartment-complex shooting",
+    "fatal": 1,
+    "injured": 0,
+    "published": "2026-07-28",
+    "source": "Valdosta Today / VPD release",
+    "sourceType": "Republished police release",
+    "url": "https://valdostatoday.com/news-2/local/2026/07/two-wanted-for-murder-following-fatal-valdosta-shooting/",
+    "summary": "Police reported one man found unresponsive in a vehicle after an exchange of gunfire at an apartment complex. He was pronounced dead at the scene. The cited release reports one fatal victim; no additional injured person is identified. Murder warrants were reported for two suspects. Charges are allegations.",
+    "status": "Murder warrants reported July 28; later disposition not verified"
+  },
+  {
+    "id": "LC-2026-0726",
+    "date": "2026-07-26",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "Robin Street",
+    "location": "Party at a residence, 2100 block of Robin Street",
+    "title": "Man critically injured in shooting at party",
+    "category": "criminal",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-07-27",
+    "reviewed": "2026-11-02",
+    "source": "WALB / VPD release",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/07/27/man-critical-condition-after-shooting-valdosta-party/",
+    "summary": "Police reported a 36-year-old man was shot after an argument at a party around 8:20 p.m. and was in critical but stable condition after emergency surgery. A 43-year-old Perry man was arrested. Separate from the July 27 Prospers Apartments homicide.",
+    "status": "Arrest reported; court outcome unverified",
+    "updates": [
+      {
+        "date": "2026-07-27",
+        "url": "https://www.wctv.tv/2026/07/27/man-arrested-after-weekend-shooting-valdosta-leaves-one-man-injured/",
+        "summary": "WCTV report on the arrest."
+      },
+      {
+        "date": "2026-07-28",
+        "url": "https://valdostadailytimes.com/2026/07/28/man-arrested-after-robin-street-shooting/",
+        "summary": "Valdosta Daily Times report on the arrest."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0719",
+    "date": "2026-07-19",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "Old Hudson Street",
+    "location": "500 block of Old Hudson Street",
+    "title": "Man shot in leg during attempted armed robbery",
+    "category": "criminal",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-07-23",
+    "reviewed": "2026-11-02",
+    "source": "WCTV / VPD",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.wctv.tv/2026/07/23/valdosta-police-seeking-publics-help-locating-armed-dangerous-shooting-suspect/",
+    "summary": "Police reported a 62-year-old man was shot once in the lower leg, a non-life-threatening injury, during an attempted armed robbery around 8:30 a.m. Warrants were issued for a 25-year-old suspect.",
+    "status": "Suspect sought as of July 30; charges are allegations",
+    "updates": [
+      {
+        "date": "2026-07-23",
+        "url": "https://valdostadailytimes.com/2026/07/23/police-seek-suspect-in-shooting/",
+        "summary": "Valdosta Daily Times report on the same incident."
+      },
+      {
+        "date": "2026-07-30",
+        "url": "https://www.laniercountynewsonline.com/2026/07/30/man-shot-in-lower-leg-in-valdosta-robbery-publics-help-wanted/",
+        "summary": "Lanier County News: suspect still sought."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0712",
+    "date": "2026-07-12",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "Mack Drive",
+    "location": "Residence, 500 block of Mack Drive",
+    "title": "Two dead in apparent murder-suicide at Mack Drive home",
+    "category": "criminal",
+    "fatal": 2,
+    "injured": 0,
+    "published": "2026-07-13",
+    "reviewed": "2026-11-02",
+    "source": "Valdosta Daily Times / VPD release",
+    "sourceType": "Attributed local reporting",
+    "url": "https://valdostadailytimes.com/2026/07/13/2-dead-in-apparent-murder-suicide/",
+    "summary": "Officers answering a threat-of-self-harm call heard a gunshot, forced entry, and found a 29-year-old woman dead and a 32-year-old man with an apparent self-inflicted gunshot wound; he later died. A toddler was unharmed. Police called it an apparent murder-suicide. The man's gunshot is confirmed; the woman's cause of death is not stated outright in the cited sources.",
+    "status": "Apparent murder-suicide per VPD; cause of death for one victim not stated",
+    "flags": [
+      "One victim's cause of death not stated in sources"
+    ],
+    "updates": [
+      {
+        "date": "2026-07-13",
+        "url": "https://www.walb.com/2026/07/13/toddler-found-inside-valdosta-house-apparent-murder-suicide/",
+        "summary": "WALB report on the same incident."
+      },
+      {
+        "date": "2026-07-23",
+        "url": "https://www.laniercountynewsonline.com/2026/07/23/death-of-new-mother-marks-valdostas-2nd-domestic-murder-suicide-in-recent-days/",
+        "summary": "Lanier County News refers to 'the shootings' and Valdosta's second domestic murder-suicide in recent days."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0627",
+    "date": "2026-06-27",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "South Lee Street",
+    "location": "Outside a workplace, 200 block of South Lee Street",
+    "title": "Two dead in domestic murder-suicide outside workplace",
+    "category": "criminal",
+    "fatal": 2,
+    "injured": 0,
+    "published": "2026-06-29",
+    "reviewed": "2026-11-02",
+    "source": "Fox 49 / VPD release",
+    "sourceType": "Attributed local reporting",
+    "url": "https://fox49.tv/news/local/two-dead-after-weekend-domestic-violence-shooting-in-valdosta-detectives-say",
+    "summary": "Police reported a 56-year-old man shot his ex-wife, 46, multiple times outside her workplace and then shot himself. Both died. The two fatalities are one homicide and one self-inflicted death.",
+    "status": "Murder-suicide per VPD; no prosecution expected",
+    "updates": [
+      {
+        "date": "2026-06-29",
+        "url": "https://valdostadailytimes.com/2026/06/29/two-people-are-dead-following-a-murder-suicide-on-saturday/",
+        "summary": "Valdosta Daily Times report on the same incident."
+      },
+      {
+        "date": "2026-06-29",
+        "url": "https://www.walb.com/2026/06/29/moultrie-woman-killed-valdosta-murder-suicide/",
+        "summary": "WALB report on the same incident."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0624",
+    "date": "2026-06-24",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "Stillwater Drive",
+    "location": "800 block of Stillwater Drive",
+    "title": "Teen injured in Stillwater Drive shooting",
+    "category": "criminal",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-07-15",
+    "reviewed": "2026-10-13",
+    "source": "WALB / Valdosta Police Department",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/07/16/valdosta-police-are-asking-publics-help-find-20-year-old-man-accused-june-shooting/",
+    "summary": "Police described gunfire during a reported transaction on Stillwater Drive. A teenager arrived at hospital with a gunshot injury and was later reported to be recovering after transfer for further care. One gunshot injury is indexed; additional people being present does not imply additional injuries.",
+    "status": "Arrest warrants reported in July; final disposition not verified"
+  },
+  {
+    "id": "LC-2026-0610",
+    "date": "2026-06-09",
+    "dateBasis": "Incident date confirmed by WALB follow-up",
+    "area": "Valdosta",
+    "place": "Inner Perimeter Road",
+    "location": "Walmart, 3274 Inner Perimeter Road",
+    "title": "Shopper injured in reported accidental discharge",
+    "category": "accidental",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-06-10",
+    "reviewed": "2026-10-13",
+    "source": "Valdosta Today / VPD release",
+    "sourceType": "Republished police release",
+    "url": "https://valdostatoday.com/news-2/local/2026/06/woman-injured-in-shooting-incident-at-valdosta-walmart/",
+    "summary": "Police reported one shopper injured by an apparent accidental firearm discharge at Walmart on June 9. The injury was described as non-life-threatening. A June 10 WALB follow-up confirms the incident date and reports a reckless-conduct arrest. This corrects the earlier publication-date fallback without adding another incident.",
+    "status": "Reckless-conduct arrest reported; court outcome not verified",
+    "updates": [
+      {
+        "date": "2026-06-10",
+        "url": "https://www.walb.com/2026/06/10/update-man-arrested-after-accidental-shooting-valdosta-walmart/",
+        "summary": "Follow-up confirms June 9 incident date and reports an arrest for reckless conduct. Record ID retained for existing correction references."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0515",
+    "date": "2026-05-15",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "Old Statenville Road",
+    "location": "Park Chase Apartments, 1100 Old Statenville Road",
+    "title": "Teen injured in reported accidental shooting",
+    "category": "accidental",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-05-18",
+    "reviewed": "2026-10-13",
+    "source": "Valdosta Today / VPD release",
+    "sourceType": "Republished police release",
+    "url": "https://valdostatoday.com/news-2/local/2026/05/teen-critically-injured-in-accidental-shooting-at-valdosta-apartments/",
+    "summary": "A republished Valdosta Police release reported a teenager injured in a shooting at an apartment complex. Investigators described the discharge as accidental. The reported injury is counted as nonfatal based on the cited release.",
+    "status": "Accidental classification in cited release"
+  },
+  {
+    "dateBasis": "Wednesday incident date inferred from May 14 publication",
+    "area": "Valdosta",
+    "category": "criminal",
+    "reviewed": "2026-10-13",
+    "id": "LC-2026-0513",
+    "date": "2026-05-13",
+    "place": "Forsyth Place",
+    "location": "1700 block of Forsyth Place",
+    "title": "Teen grazed by gunfire as homes struck",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-05-14",
+    "source": "WALB / Valdosta Police Department",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/05/15/2-arrested-after-valdosta-shooting-leaves-teen-injured-homes-damaged/",
+    "summary": "Police reported an eighteen-year-old with a bullet graze to his arm after gunfire struck several residences. He was treated and released at the scene. Two arrests were reported. The source says Wednesday night; May 13 is inferred from its Thursday, May 14 publication.",
+    "status": "Two arrests and charges reported; court outcome not established"
+  },
+  {
+    "id": "LC-2026-0503",
+    "date": "2026-05-03",
+    "dateBasis": "Incident date",
+    "area": "County / town unverified",
+    "place": "Madison Highway",
+    "location": "Jay Boy’s Travel Center, 3661 Madison Highway",
+    "title": "One killed, three injured at travel center",
+    "category": "criminal",
+    "fatal": 1,
+    "injured": 3,
+    "published": "2026-05-03",
+    "reviewed": "2026-10-13",
+    "source": "WALB / Lowndes County Sheriff’s Office",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/05/03/one-dead-two-injured-shooting-valdosta-business-suspect-custody/",
+    "summary": "WALB, citing the Lowndes County Sheriff’s Office, reported four people shot at a Madison Highway travel center: one died and three were hospitalized. The report says a suspect was taken into custody and faced murder charges. Charges are allegations, not a conviction.",
+    "status": "Arrest and charges reported; disposition not established"
+  },
+  {
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "category": "criminal",
+    "reviewed": "2026-10-13",
+    "id": "LC-2026-0502",
+    "date": "2026-05-02",
+    "place": "Bemiss Road",
+    "location": "Boardwalk Ultra Lounge, 2159 Bemiss Road",
+    "title": "Man injured in shooting outside lounge",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-05-08",
+    "source": "Valdosta Today / VPD release",
+    "sourceType": "Republished police release",
+    "url": "https://valdostatoday.com/news-2/local/2026/05/valdosta-police-search-for-shooting-suspect/",
+    "summary": "Police reported one man with a gunshot wound to his leg outside a lounge. He was taken to hospital and reported stable. Arrest warrants were reported; charges are allegations.",
+    "status": "Arrest warrants reported May 7; later disposition not verified"
+  },
+  {
+    "id": "LC-2026-0424",
+    "date": "2026-04-24",
+    "dateBasis": "Incident date confirmed by corroborating local report",
+    "area": "Valdosta",
+    "place": "East Gordon Street",
+    "location": "900–1000 blocks of East Gordon Street",
+    "title": "Teen injured in East Gordon Street shooting",
+    "category": "criminal",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-04-27",
+    "reviewed": "2026-10-13",
+    "source": "WALB / WCTV / Valdosta Police Department",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/04/28/vpd-investigation-underway-after-17-year-old-shot-friday-night-left-critical-condition/",
+    "summary": "Police reported a seventeen-year-old with a gunshot wound to the torso found in the 900 block after gunfire was reported in the 1000 block. He was hospitalized and transferred to Florida, reported critical but stable. No injuries were reported inside the nearby home struck by gunfire. One injured person is indexed.",
+    "status": "Investigation ongoing in cited report; later outcome unverified",
+    "updates": [
+      {
+        "date": "2026-04-30",
+        "url": "https://www.laniercountynewsonline.com/2026/04/30/teen-found-wounded-by-gunfire-with-a-stolen-rifle-nearby/",
+        "summary": "Corroborating report explicitly dates the incident April 24 at 11:35 p.m."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0407",
+    "date": "2026-04-07",
+    "dateBasis": "Incident date",
+    "area": "County / town unverified",
+    "place": "White Water Road",
+    "location": "4900 block of White Water Road, unincorporated Lowndes County",
+    "title": "Reported shooting on White Water Road (unconfirmed: victim not reported hit)",
+    "category": "criminal",
+    "fatal": 0,
+    "injured": 0,
+    "published": "2026-04-08",
+    "reviewed": "2026-11-02",
+    "source": "WALB / Lowndes County Sheriff's Office",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/04/08/city-valdosta-employee-identified-victim-lowndes-county-shooting/",
+    "summary": "An LCSO field case report described a reported shooting / aggravated assault with a gun and named a 49-year-old City of Valdosta manager as the victim. Neither cited article says she was struck by gunfire, so this record counts 0 injured and adds no one to people-shot totals until a source confirms an injury.",
+    "status": "Two men later charged (aggravated assault, firearm during a felony); court outcome unverified",
+    "flags": [
+      "Unconfirmed: victim not reported hit"
+    ],
+    "updates": [
+      {
+        "date": "2026-05-06",
+        "url": "https://www.walb.com/2026/05/06/man-initially-listed-witness-now-charged-shooting-valdosta-city-employee-additional-arrests-expected/",
+        "summary": "Follow-up: a man initially listed as a witness surrendered May 4 and was charged; a second man was also charged."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0302",
+    "date": "2026-03-02",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "East Park Avenue",
+    "location": "Apartments, 1500 block of East Park Avenue",
+    "title": "Woman injured in reported domestic shooting",
+    "category": "criminal",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-03-05",
+    "reviewed": "2026-10-13",
+    "source": "Valdosta Today / VPD release",
+    "sourceType": "Republished police release",
+    "url": "https://valdostatoday.com/news-2/local/2026/03/valdosta-police-seek-man-in-shooting-investigation/",
+    "summary": "A police release reported one woman found in a vehicle with gunshot wounds and taken to hospital in critical but stable condition. Investigators described an alleged domestic shooting. The later arrest is an update to this same incident and is not counted as another shooting.",
+    "status": "Suspect arrest reported September 26; court outcome not established",
+    "updates": [
+      {
+        "date": "2026-10-01",
+        "url": "https://www.walb.com/2026/10/01/valdosta-man-arrested-texas-after-shooting-his-girlfriend-march/",
+        "summary": "WALB, attributing VPD, reported the suspect was arrested in Texas on September 26 and would undergo extradition. The March incident remains a single archive record."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0211",
+    "date": "2026-02-11",
+    "dateBasis": "Date deputies found victim, as reported by sheriff",
+    "area": "County / town unverified",
+    "place": "Myddleton Road",
+    "location": "500 block of Myddleton Road, Lowndes County",
+    "title": "Man found dead in Myddleton Road shooting investigation",
+    "category": "criminal",
+    "fatal": 1,
+    "injured": 0,
+    "published": "2026-02-26",
+    "reviewed": "2026-10-13",
+    "source": "WALB / Lowndes County Sheriff’s Office",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/02/26/deputies-search-two-suspects-deadly-myddleton-road-shooting/",
+    "summary": "The sheriff’s office reported deputies found one man dead from an apparent gunshot wound on February 11. Two arrest warrants were reported. A later update reports both suspects taken into custody in Berrien County; those arrests do not create another Lowndes shooting record. No other gunshot victim is identified in the cited reports.",
+    "status": "Both suspects arrested February 26–27; court outcome not verified",
+    "updates": [
+      {
+        "date": "2026-02-27",
+        "url": "https://www.walb.com/2026/02/27/shooting-suspects-spotted-berrien-co-officials-warn-residents-lock-all-doors/",
+        "summary": "WALB reports one suspect captured February 26 and the second February 27 in Berrien County."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0116",
+    "date": "2026-01-16",
+    "dateBasis": "Discovery date; Friday January 16 inferred from January 20 report and corroborated by national listing",
+    "area": "County / town unverified",
+    "place": "Skipper Bridge Road",
+    "location": "3200 block of Skipper Bridge Road, Lowndes County",
+    "title": "Man found dead with gunshot wound on Skipper Bridge Road",
+    "category": "criminal",
+    "fatal": 1,
+    "injured": 0,
+    "published": "2026-01-20",
+    "reviewed": "2026-10-13",
+    "source": "WCTV / Lowndes County Sheriff’s Office",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.wctv.tv/2026/01/20/victim-identified-skipper-bridge-road-homicide-valdosta/",
+    "summary": "The sheriff’s office reported one man found dead with an apparent gunshot wound in the 3200 block of Skipper Bridge Road. A suspect was arrested in Tallahassee. January 16 is the discovery date; the exact time of the shooting is not established. Other deaths discussed in the suspect’s Florida cases are outside Lowndes County and excluded.",
+    "status": "Suspect arrest reported in Florida; Lowndes homicide charges reported; court outcome unverified",
+    "updates": [
+      {
+        "date": "2026-01-20",
+        "url": "https://gunmemorial.org/2026/01/16/walter-pettiford",
+        "summary": "National memorial listing corroborates the January 16 date and links to the WCTV report. It is a discovery aid, not a complete county tally."
+      }
+    ]
+  },
+  {
+    "id": "LC-2026-0107",
+    "date": "2026-01-07",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "place": "East Park Avenue",
+    "location": "Convenience store, 1400 block of East Park Avenue",
+    "title": "Store clerk injured in convenience-store shooting",
+    "category": "criminal",
+    "fatal": 0,
+    "injured": 1,
+    "published": "2026-01-12",
+    "reviewed": "2026-10-13",
+    "source": "WALB / Valdosta Police Department",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/01/12/two-arrested-valdosta-shooting-investigation-firearms-marijuana-seized/",
+    "summary": "Police reported a store clerk with an apparent gunshot wound to the torso after a convenience-store shooting. The clerk was taken to hospital with injuries described as non-life-threatening. Two arrests were reported on January 9. Multiple wounds to the same person are counted as one person injured.",
+    "status": "Two arrests and charges reported; investigation ongoing in cited report"
+  }
+]

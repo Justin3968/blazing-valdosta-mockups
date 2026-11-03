@@ -1,0 +1,22 @@
+[
+  {
+    "id": "OH-2026-0804",
+    "date": "2026-08-04",
+    "dateBasis": "Incident date",
+    "area": "Valdosta",
+    "location": "Homeless camps in woods, 1300 block of Lankford Drive",
+    "title": "Man dies, woman badly burned in arson at homeless camps",
+    "cause": "arson",
+    "fatal": 1,
+    "injured": 1,
+    "published": "2026-08-05",
+    "reviewed": "2026-11-02",
+    "source": "WALB / WCTV / VPD",
+    "sourceType": "Attributed local reporting",
+    "url": "https://www.walb.com/2026/08/05/man-charged-with-murder-after-valdosta-fire-kills-one-injures-another/",
+    "summary": "Police reported fires were set at two homeless camps around 7 a.m. A 35-year-old man died of burns and a 37-year-old woman was seriously burned. The suspect had allegedly argued with and threatened the victims.",
+    "status": "Charged: Grady Callaway, 53 — malice murder, aggravated assault, two counts aggravated battery, two counts arson, animal cruelty (allegations; disposition not verified)",
+    "alsoCovered": "Valdosta Today; Valdosta Daily Times 8/05; Lanier County News 8/06",
+    "linkedAssault": "AS-2026-0804"
+  }
+]

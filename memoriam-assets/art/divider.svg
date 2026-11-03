@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 28" width="600" height="28" preserveAspectRatio="xMidYMid meet">
+  <!-- Blazing Valdosta original art: section divider, rules with tally ticks and a small skull. Hand-authored, CC0. -->
+  <g stroke="#e3132f" stroke-width="1.5" stroke-linecap="round">
+    <path d="M10,14 H272 M328,14 H590"/>
+    <path opacity=".8" d="M232,7 V21 M238,7 V21 M244,7 V21 M250,7 V21 M228,19 L254,9 M362,7 V21 M356,7 V21 M350,7 V21 M344,7 V21 M340,19 L366,9" stroke="#bdbab3"/>
+  </g>
+  <g transform="translate(286,1) scale(.26)">
+    <path fill="#efece6" fill-rule="evenodd" d="M50,6 C24,6 10,24 10,46 C10,60 16,68 24,72 L24,86 C24,90 28,94 32,94 L68,94 C72,94 76,90 76,86 L76,72 C84,68 90,60 90,46 C90,24 76,6 50,6 Z M23,48 C23,40 29,36 35,36 C42,36 46,41 46,48 C46,56 40,60 34,60 C28,60 23,55 23,48 Z M54,48 C54,41 58,36 65,36 C71,36 77,40 77,48 C77,55 72,60 66,60 C60,60 54,56 54,48 Z M50,60 L44,73 L56,73 Z"/>
+  </g>
+</svg>

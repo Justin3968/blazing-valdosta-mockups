@@ -1,0 +1,57 @@
+[
+  {
+    "date": "2026-03-24",
+    "location": "Valdosta; response in the 500 block of East Martin Luther King Jr. Drive",
+    "title": "Hit-and-run charge after vehicle struck fence and tree",
+    "fatal": null,
+    "injured": null,
+    "summary": "VPD reported a driver crashed into a fence and tree before entering a nearby residence. Four children were checked; no immediate injuries were observed in them. The driver received hospital treatment. The source does not establish a crash-injury total or exact crash address.",
+    "status": "Hit-and-run and DUI charges reported; court outcome unverified",
+    "published": "2026-03-27",
+    "url": "https://www.walb.com/2026/03/27/father-arrested-dui-with-small-children-vehicle-forced-entry-into-valdosta-home/"
+  },
+  {
+    "date": "2025-11-07",
+    "location": "Wisenbaker Lane, Valdosta",
+    "title": "Woman killed in reported vehicle assault and hit-and-run",
+    "fatal": 1,
+    "injured": null,
+    "summary": "Police reported one woman died after being struck by a pickup truck following an alleged altercation. An arrest and felony murder, aggravated assault, and hit-and-run charges were reported. No additional injury total is established.",
+    "status": "Arrest and charges reported; court outcome unverified",
+    "published": "2025-11-10",
+    "url": "https://www.walb.com/2025/11/10/woman-dies-after-man-allegedly-hits-her-with-his-truck-valdosta/"
+  },
+  {
+    "date": "2025-07-28",
+    "location": "900 block of North Lee Street, Valdosta",
+    "title": "Traffic-camera damage investigated as hit-and-run",
+    "fatal": null,
+    "injured": null,
+    "summary": "Police reported a work truck struck a traffic camera and estimated $1,000 in property damage. A hit-and-run arrest was reported. The source provides no injury counts.",
+    "status": "Property-damage case; arrest reported; injury outcome not stated",
+    "published": "2025-07-31",
+    "url": "https://www.walb.com/2025/07/30/valdosta-man-arrested-after-allegedly-running-over-traffic-camera/"
+  },
+  {
+    "date": "2025-04-24",
+    "location": "1800 block of North Ashley Street, Valdosta",
+    "title": "Driver reportedly fled after traffic collision",
+    "fatal": null,
+    "injured": null,
+    "summary": "Police investigated a reported hit-and-run after an E911 caller said the other driver left the collision scene. Officers subsequently stopped the vehicles. The cited report does not state injury or fatality counts.",
+    "status": "Police investigation reported; injury outcome not stated",
+    "published": "2025-04-29",
+    "url": "https://www.walb.com/2025/04/29/17-year-old-arrested-valdosta-after-hit-and-run-leads-drug-bust/"
+  },
+  {
+    "date": "2023-12-09",
+    "location": "3900 block of Inner Perimeter Road, Valdosta",
+    "title": "Teen killed in reported hit-and-run",
+    "fatal": 1,
+    "injured": null,
+    "summary": "A teenager was killed after being struck while checking on an injured dog in the roadway. WALB reported an arrest and vehicular-homicide and hit-and-run charges on January 5, 2024. Charges are allegations; a final court outcome has not been verified.",
+    "status": "Arrest and charges reported January 2024; disposition unverified",
+    "published": "2024-01-05",
+    "url": "https://www.walb.com/2024/01/05/man-facing-homicide-charge-fatal-hit-run-valdosta-teen/"
+  }
+]

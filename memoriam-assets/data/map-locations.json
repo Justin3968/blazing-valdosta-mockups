@@ -1,0 +1,56 @@
+{
+  "LC-2026-0211": {
+    "lat": 30.8184,
+    "lng": -83.2912,
+    "basis": "Approximate reported block",
+    "matched": "500 MYDDLETON RD"
+  },
+  "LC-2026-0116": {
+    "lat": 30.91501,
+    "lng": -83.26296,
+    "basis": "Approximate reported block",
+    "matched": "3200 SKIPPER BRIDGE RD"
+  },
+  "LC-2026-0817": {
+    "lat": 30.82973,
+    "lng": -83.30173,
+    "basis": "Approximate reported block",
+    "matched": "1300 RIVER ST"
+  },
+  "LC-2026-0727": {
+    "lat": 30.85729,
+    "lng": -83.26827,
+    "basis": "Approximate address location",
+    "matched": "1503 E PARK AVE"
+  },
+  "LC-2026-0503": {
+    "lat": 30.74646,
+    "lng": -83.2759,
+    "basis": "Approximate address location",
+    "matched": "3661 MADISON HWY"
+  },
+  "LC-2026-0929": {
+    "lat": 30.84705,
+    "lng": -83.27531,
+    "basis": "Approximate reported block",
+    "matched": "700 E BROOKWOOD DR"
+  },
+  "LC-2026-0627": {
+    "lat": 30.83061,
+    "lng": -83.2761,
+    "basis": "Approximate reported block",
+    "matched": "200 S LEE ST, VALDOSTA, GA, 31601"
+  },
+  "LC-2026-0712": {
+    "lat": 30.86108,
+    "lng": -83.29489,
+    "basis": "Approximate reported block",
+    "matched": "500 MACK DR, VALDOSTA, GA, 31602"
+  },
+  "LC-2026-1025B": {
+    "lat": 30.84623,
+    "lng": -83.27546,
+    "basis": "Approximate reported block",
+    "matched": "1300 N TROUP ST, VALDOSTA, GA, 31601"
+  }
+}
