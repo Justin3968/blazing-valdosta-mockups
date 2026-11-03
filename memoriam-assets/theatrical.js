@@ -44,7 +44,7 @@ if(wall){
  wall.insertAdjacentHTML('afterbegin',`<div class="bv-stage-fx" aria-hidden="true"><div class="bv-reaper"></div><div class="bv-shade"></div><div class="bv-fog"></div>
 <div class="bv-curtain bv-cl"></div><div class="bv-curtain bv-cr"></div><div class="bv-floorfire"></div><div class="bv-valance"></div>
 <div class="bv-tape"><span>CRIME SCENE · DO NOT CROSS</span><span>CRIME SCENE · DO NOT CROSS</span><span>CRIME SCENE · DO NOT CROSS</span><span>CRIME SCENE · DO NOT CROSS</span><span>CRIME SCENE · DO NOT CROSS</span><span>CRIME SCENE · DO NOT CROSS</span></div>
-<svg class="bv-threads" viewBox="0 0 70 60"><g stroke="#f6cf00" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M2,10 C14,8 22,14 34,12"/><path d="M2,16 C12,18 20,26 26,34"/><path d="M2,24 C16,24 24,30 40,28"/><path d="M2,30 C10,34 14,44 18,52"/><path d="M2,38 C14,40 26,38 30,44"/><path d="M2,44 C8,46 16,50 22,58"/></g></svg></div>`);
+<svg class="bv-threads" viewBox="0 0 70 60"><g stroke="#1c1c1c" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M2,10 C14,8 22,14 34,12"/><path d="M2,16 C12,18 20,26 26,34"/><path d="M2,24 C16,24 24,30 40,28"/><path d="M2,30 C10,34 14,44 18,52"/><path d="M2,38 C14,40 26,38 30,44"/><path d="M2,44 C8,46 16,50 22,58"/></g></svg></div>`);
  const fx=wall.querySelector('.bv-stage-fx'),cl=fx.querySelector('.bv-cl'),cr=fx.querySelector('.bv-cr'),ff=fx.querySelector('.bv-floorfire'),val=fx.querySelector('.bv-valance');
  let last='';
  function draw(){
