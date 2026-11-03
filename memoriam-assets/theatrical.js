@@ -59,11 +59,11 @@ if(wall){
   const s0=Math.max(.42,Math.min(1,W/190));let fl='';
   const step=Math.max(24,46*s0);for(let y=H*.05;y<H*.985;y+=step*rnd(.8,1.1)){const t=y/H,s=s0*(.55+.6*t);fl+=flame(edge(t)-3,y+30*s,s,14)}
   const ty=tb*H,tie=`<path d="M0,${ty-12} Q${W*.33},${ty+6} ${W*.54},${ty-4} L${W*.54},${ty+10} Q${W*.33},${ty+22} 0,${ty+8}Z" fill="#3a0a0c" stroke="#8a1a1a"/>`;
-  const svg=(cid)=>`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="overflow:visible"><defs><clipPath id="${cid}"><path d="${body}"/></clipPath></defs><g clip-path="url(#${cid})"><rect width="${W+4}" height="${H}" fill="#070707"/>${folds}<rect width="${W+4}" height="${H}" fill="url(#bvCShade)"/></g><path d="${line}" fill="none" stroke="#a3121c" stroke-width="3"/><path d="${line}" fill="none" stroke="#ff2a1a" stroke-width="10" opacity=".3" filter="url(#bvGlow)"/>${tie}<g filter="url(#bvGlow)">${fl}</g></svg>`;
+  const svg=(cid)=>`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="overflow:visible"><defs><clipPath id="${cid}"><path d="${body}"/></clipPath></defs><g clip-path="url(#${cid})"><rect width="${W+4}" height="${H}" fill="#070707"/>${folds}<rect width="${W+4}" height="${H}" fill="url(#bvCShade)"/></g><path d="${line}" fill="none" stroke="#a3121c" stroke-width="3"/><path d="${line}" fill="none" stroke="#ff2a1a" stroke-width="10" opacity=".3" filter="url(#bvGlow)"/>${tie}</svg>`;
   cl.innerHTML=svg('bvClipL');cr.innerHTML=svg('bvClipR');
   // Flames rising along the floor of the opening.
   const fs=Math.max(.45,Math.min(.95,fh/120));let f2='';for(let x=W*.45;x<w-W*.45;x+=rnd(16,26)*fs*1.2)f2+=flame(x,fh+4,rnd(.75,1.05)*fs,rnd(-10,10));
-  ff.innerHTML=`<svg width="${w}" height="${fh}" viewBox="0 0 ${w} ${fh}" style="overflow:visible"><g filter="url(#bvGlow)">${f2}</g></svg>`;
+  ff.innerHTML=''; // curtain fire removed at Justin's request (flames still computed so the logo fire's seeded shapes stay identical)
   const sw=Math.max(70,Math.min(130,w/9));let q='';for(let x=w;x>-sw;x-=sw)q+=`Q${(x-sw/2).toFixed(1)},${x/sw%2<1?44:38} ${(x-sw).toFixed(1)},22 `;
   val.innerHTML=`<svg width="${w}" height="48" viewBox="0 0 ${w} 48"><path d="M0,0 H${w} V22 ${q}V0 Z" fill="url(#bvVal)" stroke="#8d1218" stroke-width="2"/></svg>`;
  }
