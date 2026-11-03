@@ -9,7 +9,7 @@
 .route-hero.bv-hero-art::before{content:"";position:absolute;right:max(0%,calc(50% - 640px));bottom:-30px;width:240px;height:110px;background:radial-gradient(ellipse at 50% 100%,#ff6a1a55,transparent 70%);pointer-events:none}
 /* ---------- The stage (In Memoriam wall) ---------- */
 .bv-wall.bv-stage{--cw:clamp(40px,13vw,190px);--ff:clamp(58px,8vw,112px);position:relative;overflow:hidden;isolation:isolate;
- padding:clamp(96px,9vw,128px) calc(var(--cw) + 8px) calc(var(--ff) + 34px);border-top:3px solid #8d1218;
+ padding:clamp(96px,9vw,128px) calc(var(--cw) + 8px) calc(var(--ff) + 34px);border-top:3px solid #8d1218;border-left:3px solid #8d1218;border-right:3px solid #8d1218;
  background:radial-gradient(ellipse 60% 22% at 50% 62%,#1b1c22,transparent 70%),linear-gradient(180deg,#0000 0,#0000 30%,#060607 52%,#030304 100%),#050505 url(art/brick-wall.svg) repeat;background-size:auto,auto,120px 60px}
 .bv-wall.bv-stage>.bv-divider{display:none}
 .bv-stage>*:not(.bv-stage-fx){position:relative;z-index:3}
@@ -119,3 +119,7 @@
 }
 .bv-logofire{position:relative;display:inline-block;isolation:isolate;text-shadow:0 2px 0 #000,1px 0 0 #000,-1px 0 0 #000,0 0 4px #000,0 0 8px #000a}.bv-lf{position:absolute;pointer-events:none;-webkit-text-stroke:0}.bv-lf svg{display:block}.bv-lf-back{z-index:-1}.bv-lf-front{z-index:1}
 @media(prefers-reduced-motion:reduce){.bv-fl,.bv-emb,.clock-face>span,#bv-fell-map .fatal-marker::after,.bv-since-face>i{animation:none!important}.bv-reveal{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* Hero behind "Lowndes County Crime Tracker": black-to-very-dark-gray fade instead of the red tint */
+body{background-image:radial-gradient(ellipse at top,#0d0d0d 0%,transparent 55%),repeating-linear-gradient(0deg,#ffffff03 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,#00000040 0 1px,transparent 1px 4px)!important}
+.route-hero.bv-hero-art{background:linear-gradient(90deg,#000 0%,#0b0b0b 45%,#1a1a1a 100%);padding:12px 18px}
