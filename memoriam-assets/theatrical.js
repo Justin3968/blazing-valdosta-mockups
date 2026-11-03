@@ -184,4 +184,11 @@ if(!reduce&&'IntersectionObserver' in window){
  const anchor=document.querySelector('body>.bv-divider')||document.querySelector('body>footer');
  if(latest&&anchor){const item=latest.parentElement,tail=document.createElement('div');tail.className='site-main bv-tailmain';anchor.before(tail);tail.appendChild(latest);if(!item.children.length){item.hidden=true;item.style.display='none'}}
 })();
+
+// t107u: one map only. Drop the lower Homicide Map's Leaflet canvas; keep that panel's heading, filters, key, count and report list.
+(function(){
+ const card=document.getElementById('homicide-map'),wrap=card&&card.querySelector('.map-canvas-wrap');
+ if(wrap){wrap.remove();card.classList.add('bv-nomap')}
+ const fm=document.getElementById('bv-fell-map');if(fm)fm.setAttribute('data-stationary','true');
+})();
 })();

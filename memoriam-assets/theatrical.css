@@ -309,3 +309,9 @@ thead th{box-shadow:0 2px 8px -2px #e0121e66}
 .bv-q-yr{color:#fff;font-weight:900;font-size:12px}
 @media(max-width:720px){.bv-qstrip{margin:10px 0 14px;clip-path:none}}
 .bv-qstrip{gap:8px;padding:0 8px}.bv-qstrip ul{gap:8px}.bv-qstrip li{gap:8px;padding:5px 8px}
+/* t107u: stationary Where They Fell map; lower map canvas removed */
+#bv-fell-map,#bv-fell-map.leaflet-grab,#bv-fell-map .leaflet-grab{cursor:default!important}
+#bv-fell-map .leaflet-interactive{cursor:pointer}
+.homicide-map-card.bv-nomap .map-layout{grid-template-columns:minmax(0,1fr)!important}
+.homicide-map-card.bv-nomap #map-reset,.homicide-map-card.bv-nomap .map-focus{display:none!important}
+@media(max-width:720px){.masthead{padding-top:58px!important}}

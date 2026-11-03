@@ -47,7 +47,8 @@ tick();setInterval(tick,1000);
 // Where They Fell: Leaflet map with the home page's county outline and red numbered markers (no tile layer, same as the home map).
 const el=document.getElementById('bv-fell-map');
 if(window.L&&window.LOWNDES_BOUNDARY){
- const m=L.map(el,{scrollWheelZoom:false,attributionControl:true,zoomSnap:.25});
+ const m=L.map(el,{scrollWheelZoom:false,attributionControl:true,zoomSnap:.25,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,zoomControl:false,tap:false});
+ window.bvFellMap=m;[m.dragging,m.touchZoom,m.doubleClickZoom,m.scrollWheelZoom,m.boxZoom,m.keyboard].forEach(h=>h&&h.disable());
  const outline=L.geoJSON(window.LOWNDES_BOUNDARY,{style:{color:'#8b8b8b',weight:1.5,fillColor:'#e4e2dc',fillOpacity:1},interactive:false}).addTo(m);
  const b=outline.getBounds();m.fitBounds(b,{padding:[12,12]});m.setMaxBounds(b.pad(.35));
  m.attributionControl.addAttribution('Boundary: <a href="https://tigerweb.geo.census.gov/">U.S. Census TIGERweb</a>');
