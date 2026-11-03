@@ -353,6 +353,9 @@ thead th{box-shadow:0 2px 8px -2px #e0121e66}
  /* hard red "ghost" shadow overlapped the next line on wrapped headings/tile labels; tighten offsets on phones */
  .site-main>section:not(#bv-memorial) h2,.site-main>div h2,.site-main section:not(#bv-memorial) h3,.summary-title,.bv-stat-label,.bv-sub-h{text-shadow:2px 2px 0 #000,3px 3px 0 #8d1218!important}
  .bv-stat-label{line-height:1.2}
+ /* Latest Indexed Reports: result count was squeezed into a ~53px column beside the legend chips; stack it above them */
+ #incidents .log-meta{flex-direction:column!important;align-items:flex-start!important;gap:8px!important}
+ #incidents .log-meta #result-count{width:auto!important;max-width:none!important}
  /* compact list: street names were cut off with an ellipsis; let them wrap */
  .bv-c-main b{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;overflow-wrap:anywhere;line-height:1.25}
  /* day-count tiles: keep digit rows aligned across a row when place names wrap */
