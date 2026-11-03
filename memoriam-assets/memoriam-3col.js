@@ -47,12 +47,12 @@ tick();setInterval(tick,1000);
 // Where They Fell: Leaflet map with the home page's county outline and red numbered markers (no tile layer, same as the home map).
 const el=document.getElementById('bv-fell-map');
 if(window.L&&window.LOWNDES_BOUNDARY){
- const m=L.map(el,{scrollWheelZoom:false,attributionControl:true});
+ const m=L.map(el,{scrollWheelZoom:false,attributionControl:true,zoomSnap:.25});
  const outline=L.geoJSON(window.LOWNDES_BOUNDARY,{style:{color:'#8b8b8b',weight:1.5,fillColor:'#e4e2dc',fillOpacity:1},interactive:false}).addTo(m);
  const b=outline.getBounds();m.fitBounds(b,{padding:[12,12]});m.setMaxBounds(b.pad(.35));
  m.attributionControl.addAttribution('Boundary: <a href="https://tigerweb.geo.census.gov/">U.S. Census TIGERweb</a>');
  [['Hahira',30.9913,-83.3727],['Remerton',30.8441,-83.3090],['Valdosta',30.8327,-83.2785],['Dasher',30.7513,-83.2229],['Lake Park',30.6822,-83.1799]].forEach(([name,lat,lng])=>L.marker([lat,lng],{interactive:false,icon:L.divIcon({className:'county-place-label',html:name,iconSize:[75,16],iconAnchor:[37,8]})}).addTo(m));
  mapped.forEach(r=>{const pt=LOC[r.id];L.marker([pt.lat,pt.lng],{title:`${place(r)}: ${r.fatal} reported fatal; ${pt.basis}`,icon:L.divIcon({className:'fatal-marker-wrap',html:`<span class="fatal-marker">${r.fatal}</span>`,iconSize:[26,26],iconAnchor:[13,13]})}).addTo(m).bindPopup(`<div class="fatal-popup"><small>${fmt(r.date)}</small><h3>${esc(place(r))}</h3><p>${esc(r.title)}</p><strong>${r.fatal} reported fatal</strong><p>${esc(pt.basis)}</p><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">Read source report ↗</a></div>`)});
- new ResizeObserver(()=>m.invalidateSize()).observe(el);
+ new ResizeObserver(()=>{m.invalidateSize();m.fitBounds(b,{padding:[12,12],animate:false})}).observe(el);
 }else{el.innerHTML='<p class="map-unavailable">Map unavailable. The list below links to each source.</p>'}
 })();
