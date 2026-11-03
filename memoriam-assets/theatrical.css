@@ -123,3 +123,60 @@
 /* Hero behind "Lowndes County Crime Tracker": black-to-very-dark-gray fade instead of the red tint */
 body{background-image:radial-gradient(ellipse at top,#0d0d0d 0%,transparent 55%),repeating-linear-gradient(0deg,#ffffff03 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,#00000040 0 1px,transparent 1px 4px)!important}
 .route-hero.bv-hero-art{background:linear-gradient(90deg,#000 0%,#0b0b0b 45%,#1a1a1a 100%);padding:12px 18px}
+
+/* ===== Page-wide theme (matches tape, hero fade and curtain frame): black-to-dark-gray fades, off-white text, #8d1218 red frame lines ===== */
+:root{--bv-frame:#8d1218;--bv-fade:linear-gradient(180deg,#000 0%,#0b0b0b 45%,#1a1a1a 100%)}
+.bv-ticker{border-top-color:var(--bv-frame)!important;border-bottom:1px solid var(--bv-frame)}
+.masthead{border-bottom:3px solid var(--bv-frame)}
+/* evidence board: black-to-dark-gray instead of cork, red frame like the curtains */
+.bv-three.bv-board{border:3px solid var(--bv-frame)!important;background:radial-gradient(ellipse 70% 60% at 50% 40%,transparent 40%,#000c),var(--bv-fade)!important;box-shadow:inset 0 0 90px #000,0 0 0 1px #000!important}
+.bv-board .bv-three-col{background:linear-gradient(180deg,#000 0%,#111 60%,#1a1a1a 100%)!important;border:1px solid var(--bv-frame)!important;border-top:3px solid var(--bv-frame)!important}
+.bv-tag{background:#0b0b0b;color:#e0121e;border-top:2px solid var(--bv-frame);border-bottom:2px solid var(--bv-frame);text-shadow:0 0 6px #e0121e66}
+.bv-tag::before{background:#e0121e}
+/* compact list: off the cream paper, onto the black */
+.bv-board .bv-listcol{color:#e8e4dc}
+.bv-board .bv-listcol .bv-col-sub{color:#a9a59d!important}
+.bv-board .bv-listcol::after{mix-blend-mode:screen;opacity:.05}
+.bv-blot-head{color:#cfc8bc;border-bottom-color:var(--bv-frame)}
+.bv-board .bv-compact{background:repeating-linear-gradient(#0000 0 22px,#ffffff0d 22px 23px)}
+.bv-board .bv-compact li{border-bottom-color:#2a2a2a}
+.bv-board .bv-c-date{color:#ff3344;border-color:#c8101e}
+.bv-board .bv-c-main b{color:#f2eee6}.bv-board .bv-c-main span{color:#a9a59d}
+.bv-board .bv-c-n{color:#cfc8bc}.bv-board .bv-c-src{color:#ff5a68}
+/* evidence tents on the map: dark gray with red numerals instead of yellow */
+.bv-tent,.bv-tent-k{background:linear-gradient(180deg,#3a3a3a,#1a1a1a);color:#ff3344;filter:drop-shadow(0 0 1px #e0121e) drop-shadow(0 1px 1px #000)}
+/* section heading bars: black-to-dark-gray fade with a red edge, like the hero */
+.bv-barh,.bv-dash-head h2{background:linear-gradient(90deg,#000 0%,#0b0b0b 45%,#1a1a1a 100%)!important;border-left:3px solid var(--bv-frame);border-bottom:1px solid var(--bv-frame)}
+/* panels and cards everywhere below the wall */
+.site-main .post.panel:not(.bv-three-col),.bv-dash{background:var(--bv-fade)!important;border:1px solid #1f1f1f!important;border-top:3px solid var(--bv-frame)!important;border-left:3px solid var(--bv-frame)!important;border-right:3px solid var(--bv-frame)!important}
+.bv-stat,.bv-panel,.bv-card,.clock-board,.bv-since a{background:linear-gradient(180deg,#050505 0%,#141414 100%)!important;border-color:#2a2a2a!important}
+.bv-stat,.bv-panel,.clock-board,.bv-since a{border-top:2px solid var(--bv-frame)!important}
+.bv-stat.bv-hero{background:linear-gradient(160deg,#000 0%,#0b0b0b 45%,#1a1a1a 100%)!important;border:1px solid var(--bv-frame)!important;border-top:3px solid var(--bv-frame)!important}
+.bv-stat.bv-hero .bv-stat-label{color:#e8e4dc}
+.bv-stat.bv-days{background:repeating-linear-gradient(45deg,#0b0b0b 0 10px,#111 10px 20px)!important}
+.bv-card{border-left-width:6px!important;border-left-color:var(--c)!important}
+.bv-since a:hover,.bv-since a:focus-visible{background:#1a1a1a!important;border-color:var(--bv-frame)!important}
+.traffic-report{border-left-color:var(--bv-frame)!important}
+.coverage-notice,.bv-wall-caveat{background:linear-gradient(90deg,#000 0%,#0b0b0b 45%,#1a1a1a 100%)!important;border:1px solid #2a2a2a!important;border-left:5px solid var(--bv-frame)!important;color:#d8d4cc!important}
+/* tables */
+thead th{background:#000!important;border-bottom:2px solid var(--bv-frame)!important;color:#d8d4cc}
+tbody tr.selected-history,tbody tr.selected-history td{background:#1a1a1a!important}
+tbody td{border-color:#222}
+/* inputs and buttons */
+.controls select,.log-tools input,.log-tools select,select,input[type=search],input[type=text]{background:#050505!important;border-color:#3a3a3a!important;color:#eee}
+select:focus,input:focus{outline:1px solid var(--bv-frame)}
+.bv-card-more,.export-button,.share-actions button{border-color:var(--bv-frame)!important;color:#e8e4dc}
+/* small links: off-white/light gray instead of teal; red on hover */
+summary,.post-footer,.text-button,.post-footer a{color:#bdb8ae!important}
+.post-footer{border-top-color:#2a2a2a!important}
+.supporting-details{border-top-color:#2a2a2a!important}
+summary:hover,.post-footer:hover,.text-button:hover{color:#ff5a68!important}
+/* share box and footer */
+.qr-share,footer{background:var(--bv-fade)!important;border-top:3px solid var(--bv-frame)!important;border-left:3px solid var(--bv-frame)!important;border-right:3px solid var(--bv-frame)!important;color:#d8d4cc}
+footer a,.qr-share a{color:#ff5a68}
+/* original recoil figure beside the shot clock */
+.bv-shotfig{display:flex;justify-content:center;margin:2px 0 8px;pointer-events:none}
+.bv-shotfig img{height:150px;width:auto;filter:drop-shadow(0 6px 10px #000) drop-shadow(0 0 14px #8d121855)}
+@media(max-width:720px){.bv-shotfig img{height:100px}}
+.summary-card{background:var(--bv-fade)!important;border:1px solid #1f1f1f!important;border-top:3px solid var(--bv-frame)!important;border-left:3px solid var(--bv-frame)!important;border-right:3px solid var(--bv-frame)!important}
+.bv-caveat{background:linear-gradient(90deg,#000 0%,#0b0b0b 45%,#1a1a1a 100%)!important;border-color:#2a2a2a!important;border-left:4px solid var(--bv-frame)!important;color:#d8d4cc!important}

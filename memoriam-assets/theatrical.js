@@ -121,6 +121,11 @@ if(lab){
  let lw=0;if(window.ResizeObserver)new ResizeObserver(()=>{if(lab.offsetWidth!==lw){lw=lab.offsetWidth;requestAnimationFrame(drawLogo)}}).observe(lab);else addEventListener('resize',drawLogo);
 }
 
+// Original recoil figure beside the shot clock (decorative).
+{const cb=document.querySelector('#bv-three .bv-clockcol .clock-board');
+ if(cb&&!document.querySelector('.bv-shotfig')){const d=document.createElement('div');d.className='bv-shotfig';d.setAttribute('aria-hidden','true');
+  d.innerHTML='<img src="memoriam-assets/art/shot-figure.svg" alt="" width="200" height="260">';cb.parentNode.insertBefore(d,cb)}}
+
 // Slow fade-in as each section scrolls into view (skipped for reduced motion).
 if(!reduce&&'IntersectionObserver' in window){
  const els=[...document.querySelectorAll('#bv-memorial,#bv-three>.bv-three-col,#dashboard,.featured-panels>.post,.masonry-item>.post,#incidents,#hospital')];
