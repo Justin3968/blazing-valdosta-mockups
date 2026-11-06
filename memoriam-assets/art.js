@@ -28,7 +28,7 @@ const wall=`<section id="bv-memorial" class="bv-wall" aria-labelledby="bv-memori
 <p class="bv-wall-caveat">One outline per reported death in indexed criminal-shooting${OTH.length?' and non-firearm homicide':''} reports, newest first. Indexed reports only — not a complete county count. Includes deaths reported in murder-suicides; self-defense and police-involved deaths are counted separately in the running totals. ${OTH.length?'':'Non-firearm homicides: no indexed reports yet.'} Each outline links to its source.</p>
 ${dead.length?`<ol class="bv-outlines">${dead.map(({r,i,n})=>`<li><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" title="${esc(r.title)} — ${esc(r.source)}"><img src="memoriam-assets/art/chalk-outline.svg" alt="" width="60" height="110"><span class="bv-o-date">${fmt(r.date)}</span><span class="bv-o-place">${esc(place(r))}</span><span class="bv-o-area">${esc(area(r))}</span><span class="bv-o-src">${n>1?`${i} of ${n} · `:''}Source ↗</span></a></li>`).join('')}</ol>`:'<p class="bv-empty-note">No indexed reports yet.</p>'}
 </section>`;
-const anchor=page==='home'?document.getElementById('dashboard'):page==='reports'?document.getElementById('bv-all-cards'):null;
+const anchor=page==='home'?document.getElementById('dashboard'):null; // memoriam wall stays on the overview only
 // The memorial sits directly before the dashboard (home) / the color-coded card list (reports): header, caveat, then the wall.
 if(anchor&&!document.getElementById('bv-memorial')){anchor.insertAdjacentHTML('beforebegin',wall);anchor.insertAdjacentHTML('beforebegin',divider())}
 })();

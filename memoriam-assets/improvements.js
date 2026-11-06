@@ -12,7 +12,10 @@ function renderAnnualChanges(){
 }
 document.getElementById('compare-years').addEventListener('change',renderAnnualChanges);renderAnnualChanges();
 // Sharing succeeds only after the browser confirms the clipboard write.
-const shareArea=document.querySelector('.qr-share');shareArea.id='share';shareArea.querySelector('div').insertAdjacentHTML('beforeend','<div class="share-actions"><button id="copy-site-link">Copy site link</button><button id="share-site-link" hidden>Share site</button></div><p id="share-status" role="status"></p><input id="share-fallback" aria-label="Site link to copy" readonly hidden>');
-const publicSiteUrl='https://blazing-valdosta.youngjelly4.chatgpt.site/';
+const publicSiteUrl=new URL('original-with-memoriam-preview.html',location.href).href;
+const shareArea=document.querySelector('.qr-share');
+if(shareArea){
+shareArea.id='share';shareArea.querySelector('div').insertAdjacentHTML('beforeend','<div class="share-actions"><button id="copy-site-link">Copy site link</button><button id="share-site-link" hidden>Share site</button></div><p id="share-status" role="status"></p><input id="share-fallback" aria-label="Site link to copy" readonly hidden>');
 document.getElementById('copy-site-link').addEventListener('click',async()=>{const status=document.getElementById('share-status');try{await navigator.clipboard.writeText(publicSiteUrl);status.textContent='Site link copied.'}catch{const input=document.getElementById('share-fallback');input.value=publicSiteUrl;input.hidden=false;input.focus();input.select();status.textContent='Select and copy this link.'}});
-if(navigator.share){const button=document.getElementById('share-site-link');button.hidden=false;button.addEventListener('click',async()=>{try{await navigator.share({title:'Blazing Valdosta',url:publicSiteUrl})}catch(e){if(e.name!=='AbortError')document.getElementById('share-status').textContent='Sharing unavailable. Use Copy site link.'}})}
+if(navigator.share){const button=document.getElementById('share-site-link');button.hidden=false;button.addEventListener('click',async()=>{try{await navigator.share({title:'Blazing Valdosta',url:publicSiteUrl})}catch(e){if(e.name!=='AbortError')document.getElementById('share-status').textContent='Sharing unavailable.'}});}
+}

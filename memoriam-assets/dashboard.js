@@ -75,7 +75,7 @@ document.querySelector('.masthead').insertAdjacentHTML('afterend',ticker());
 const main=document.getElementById('main');
 if(page==='home'){
  const dash=document.createElement('section');dash.className='bv-dash';dash.id='dashboard';dash.setAttribute('aria-label','Running totals dashboard');
- dash.innerHTML=`<div class="bv-dash-head"><h2>${year} Running Totals</h2><span>Lowndes County · computed from the indexed data files</span></div>${caveat}${statsHTML}${legend()}<div class="bv-two">${monthly()}${breakdown()}</div><div class="bv-dash-head bv-sub"><h2>Recent Indexed Reports</h2><a class="post-link" href="https://blazing-valdosta.youngjelly4.chatgpt.site/reports#bv-all-cards">All color-coded reports →</a></div><div class="bv-cards">${items.slice(0,12).map(card).join('')}</div>`;
+ dash.innerHTML=`<div class="bv-dash-head"><h2>${year} Running Totals</h2><span>Lowndes County · computed from the indexed data files</span></div>${caveat}${statsHTML}${legend()}<div class="bv-two">${monthly()}${breakdown()}</div><div class="bv-dash-head bv-sub"><h2>Recent Indexed Reports</h2><a class="post-link" href="reports.html#bv-all-cards">All color-coded reports →</a></div><div class="bv-cards">${items.slice(0,12).map(card).join('')}</div>`;
  const hero=main.querySelector('.route-hero');(hero||main.firstElementChild).after(dash);
 }
 if(page==='reports'){

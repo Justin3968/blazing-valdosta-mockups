@@ -1,27 +1,27 @@
 const pageName=document.body.dataset.page||'home';
 if(pageName==='reports'||pageName==='history')coverage.classList.add('post','panel');
 document.querySelector('.brand').href='original-with-memoriam-preview.html';
-document.querySelector('.masthead nav').innerHTML=[['home','Overview','original-with-memoriam-preview.html'],['reports','Reports','https://blazing-valdosta.youngjelly4.chatgpt.site/reports'],['history','Past Years','https://blazing-valdosta.youngjelly4.chatgpt.site/history'],['methods','Sources & Methods','https://blazing-valdosta.youngjelly4.chatgpt.site/methods'],['contact','Contact','https://blazing-valdosta.youngjelly4.chatgpt.site/contact']].map(([key,label,url])=>`<a href="${url}" ${key===pageName?'aria-current="page"':''}>${label}</a>`).join('');
-document.querySelector('.header-actions').innerHTML='<a href="https://blazing-valdosta.youngjelly4.chatgpt.site/contact?type=report">Contribute a report</a><a href="original-with-memoriam-preview.html#share">Share</a>';
+document.querySelector('.masthead nav').innerHTML=[['home','Overview','original-with-memoriam-preview.html'],['reports','Reports','reports.html'],['history','Past Years','history.html'],['methods','Sources & Methods','methods.html'],['contact','Contact','contact.html']].map(([key,label,url])=>`<a href="${url}" ${key===pageName?'aria-current="page"':''}>${label}</a>`).join('');
+document.querySelector('.header-actions').innerHTML='<a href="contact.html?type=report">Contribute a report</a><a href="original-with-memoriam-preview.html#share">Share</a>';
 const siteMain=document.getElementById('main');
 const routeInfo={home:['Lowndes County Crime Tracker','Public reports, source-linked incidents, and historical county statistics.'],reports:['Incident Archive','Browse the verified shooting reports and the separate hit-and-run archive.'],history:['Historical Crime Statistics','Countywide reported offenses from GBI annual summaries.'],methods:['Sources & Counting Methods','What is counted, how records are classified, and where coverage is incomplete.'],contact:['Reports & Corrections','Help improve the archive with a public source link or a specific correction.']};
 const [pageTitle,pageDescription]=routeInfo[pageName]||routeInfo.home;
-const routeHero=document.createElement('div');routeHero.className='route-hero';routeHero.innerHTML=`<div><h1>${pageTitle}</h1><p>${pageDescription}</p></div><div class="route-actions"><a href="https://blazing-valdosta.youngjelly4.chatgpt.site/contact?type=report">Contribute a report →</a><a href="https://blazing-valdosta.youngjelly4.chatgpt.site/contact?type=correction">Request a correction →</a></div>`;
+const routeHero=document.createElement('div');routeHero.className='route-hero';routeHero.innerHTML=`<div><h1>${pageTitle}</h1><p>${pageDescription}</p></div><div class="route-actions"><a href="contact.html?type=report">Contribute a report →</a><a href="contact.html?type=correction">Request a correction →</a></div>`;
 if(pageName==='home'){
  document.querySelector('.coverage-notice').before(routeHero);
  [comparisonCard,document.getElementById('sources'),document.getElementById('officer-rows').closest('section'),document.getElementById('accidental-rows').closest('section')].forEach(card=>{const wrapper=card.closest('.masonry-item');if(wrapper)wrapper.hidden=true});
  document.querySelectorAll('.masonry-item').forEach(wrapper=>{if(wrapper.querySelector('h2')?.textContent==='Archive Update')wrapper.hidden=true});
  document.querySelectorAll('.local-coverage details').forEach(d=>d.open=false);
  document.querySelector('#incidents h2').textContent='Latest Indexed Reports';
- document.querySelector('#incidents .log-heading').insertAdjacentHTML('beforeend','<a class="post-link archive-link" href="https://blazing-valdosta.youngjelly4.chatgpt.site/reports">View all reports →</a>');
- document.querySelector('#historical .post-footer').innerHTML='<a href="https://blazing-valdosta.youngjelly4.chatgpt.site/history">Explore historical statistics →</a><span>↗</span>';
+ document.querySelector('#incidents .log-heading').insertAdjacentHTML('beforeend','<a class="post-link archive-link" href="reports.html">View all reports →</a>');
+ document.querySelector('#historical .post-footer').innerHTML='<a href="history.html">Explore historical statistics →</a><span>↗</span>';
 }else{
  const parked=document.createElement('div');parked.id='parked-panels';parked.hidden=true;[...siteMain.children].forEach(child=>parked.append(child));siteMain.append(parked,routeHero);
  const content=document.createElement('div');content.className='route-content';siteMain.append(content);
  if(pageName==='reports'){content.append(document.querySelector('.coverage-notice'),document.querySelector('.controls'),document.getElementById('scope-note'),document.getElementById('incidents'),trafficCard);document.querySelector('#incidents h2').textContent='2026 Shooting Incident Archive';content.append(shotsCard,federalCard,coverage)}
  if(pageName==='history'){content.classList.add('route-grid');content.append(historyCard,annualComparisonCard,comparisonCard,crimePieCard,coverage)}
  if(pageName==='methods'){
-  const methodCard=document.createElement('section');methodCard.className='post panel method-page-card';methodCard.innerHTML=document.getElementById('method').innerHTML;methodCard.querySelector('.close-dialog')?.remove();methodCard.insertAdjacentHTML('beforeend','<p><a class="post-link" href="https://blazing-valdosta.youngjelly4.chatgpt.site/contact?type=correction">Request a correction →</a></p><div class="post-footer">Reviewed '+window.SITE.reviewedText+'</div>');
+  const methodCard=document.createElement('section');methodCard.className='post panel method-page-card';methodCard.innerHTML=document.getElementById('method').innerHTML;methodCard.querySelector('.close-dialog')?.remove();methodCard.insertAdjacentHTML('beforeend','<p><a class="post-link" href="contact.html?type=correction">Request a correction →</a></p><div class="post-footer">Reviewed '+window.SITE.reviewedText+'</div>');
   content.classList.add('route-grid');content.append(methodCard,document.getElementById('sources'));
  }
  if(pageName==='contact'){
