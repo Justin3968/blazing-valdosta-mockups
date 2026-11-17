@@ -11,7 +11,7 @@
     "fatal": 0,
     "injured": 1,
     "published": "2026-10-30",
-    "reviewed": "2026-11-02",
+    "reviewed": "2026-11-17",
     "source": "Valdosta Today / VPD release",
     "sourceType": "Republished police release",
     "url": "https://valdostatoday.com/news-2/local/2026/10/valdosta-store-employee-fatally-shoots-armed-man-in-self-defense/",
@@ -43,7 +43,7 @@
     "fatal": 1,
     "injured": 0,
     "published": "2026-10-30",
-    "reviewed": "2026-11-02",
+    "reviewed": "2026-11-17",
     "source": "Valdosta Today / VPD release",
     "sourceType": "Republished police release",
     "url": "https://valdostatoday.com/news-2/local/2026/10/valdosta-store-employee-fatally-shoots-armed-man-in-self-defense/",
@@ -113,12 +113,24 @@
     "fatal": 0,
     "injured": 1,
     "published": "2026-09-15",
-    "reviewed": "2026-10-13",
+    "reviewed": "2026-11-17",
     "source": "WALB / Valdosta Police Department",
     "sourceType": "Attributed local reporting",
     "url": "https://www.walb.com/2026/09/15/mother-arrested-9-year-old-charged-after-10-year-old-shot-valdosta-apartment/",
     "summary": "Police reported a ten-year-old with a gunshot injury after a firearm discharged at an apartment. The child was stable in the cited update. The reported account of children playing with the gun was disputed by the injured child’s mother. This entry follows the source’s accidental-discharge description while preserving that dispute.",
-    "status": "Reckless-conduct charges reported; circumstances disputed by the victim’s family"
+    "status": "Reckless-conduct charges reported; circumstances disputed by the victim’s family. The mother previously charged in this case was reported arrested November 8 on family-violence battery and first-degree cruelty to children; court outcome unverified",
+    "updates": [
+      {
+        "date": "2026-10-26",
+        "url": "https://www.walb.com/2026/10/26/i-get-very-angry-valdosta-mother-speaks-out-after-sons-shooting-family-seeks-help/",
+        "summary": "WALB interviewed the injured child's mother, who said she had not been told of a court date and that the mother of the child charged in the September shooting still lives nearby."
+      },
+      {
+        "date": "2026-11-09",
+        "url": "https://www.walb.com/2026/11/09/mother-9-year-old-charged-valdosta-child-shooting-arrested-again-battery-cruelty-charges/",
+        "summary": "WALB, citing Valdosta Police Department and Lowndes County Sheriff's Office records, reported that Andrea McClendon, the mother previously charged in this case, was arrested November 8 at Brittany Woods Apartments, 1150 Old Statenville Road, after officers responded to reports of battery around 7:00 p.m. The sheriff's office booking report lists charges of family-violence battery and first-degree cruelty to children. The report lists a juvenile as the victim and does not give the juvenile's name, age, or relationship. Neighbors told WALB she pepper-sprayed her child."
+      }
+    ]
   },
   {
     "id": "LC-2026-0817",
@@ -525,17 +537,22 @@
     "fatal": 1,
     "injured": 0,
     "published": "2026-01-20",
-    "reviewed": "2026-10-13",
+    "reviewed": "2026-11-17",
     "source": "WCTV / Lowndes County Sheriff’s Office",
     "sourceType": "Attributed local reporting",
     "url": "https://www.wctv.tv/2026/01/20/victim-identified-skipper-bridge-road-homicide-valdosta/",
     "summary": "The sheriff’s office reported one man found dead with an apparent gunshot wound in the 3200 block of Skipper Bridge Road. A suspect was arrested in Tallahassee. January 16 is the discovery date; the exact time of the shooting is not established. Other deaths discussed in the suspect’s Florida cases are outside Lowndes County and excluded.",
-    "status": "Suspect arrest reported in Florida; Lowndes homicide charges reported; court outcome unverified",
+    "status": "Suspect arrest reported in Florida; Lowndes homicide charges reported; trial date reported as November 30, 2027; court outcome unverified",
     "updates": [
       {
         "date": "2026-01-20",
         "url": "https://gunmemorial.org/2026/01/16/walter-pettiford",
         "summary": "National memorial listing corroborates the January 16 date and links to the WCTV report. It is a discovery aid, not a complete county tally."
+      },
+      {
+        "date": "2026-11-04",
+        "url": "https://www.walb.com/2026/11/04/trial-date-set-man-accused-januarys-leon-county-valdosta-string-murders/",
+        "summary": "WALB, citing court documents, reported a trial date of November 30, 2027, for Flay Rollins, the man accused of the Valdosta killing."
       }
     ]
   },
